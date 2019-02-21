@@ -13,41 +13,39 @@
           <vuetify-logo/>
         </div>
         <v-card>
-          <v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>
+          <v-card-title class="headline">{{ $vuetify.t('Gentile') }} Nome_Utente </v-card-title>
           <v-card-text>
-            <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-            <p>For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank">documentation</a>.</p>
-            <p>If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat">discord</a>.</p>
-            <p>Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute">issue board</a>.</p>
-            <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-            <div class="text-xs-right">
-              <em><small>&mdash; John Leider</small></em>
-            </div>
+            <p> {{ $vuetify.t('To facilitate you on arrival at our facility') }} {Name Hotel}, {{ $vuetify.t('we invite you to') }} </p>
+            <p> {{ $vuetify.t('do the') }} {Pre Chech-In}  {{ $vuetify.t('for the prenotation number') }} {123412414}, {{ $vuetify.t('from') }}  {30-2-2019} {{ $vuetify.t('to') }}  </p>
+            <p> {2-3-2019}, {{ $vuetify.t('for') }}  {3} {{ $vuetify.t('people and') }}  {1} {{ $vuetify.t('room') }} .
+              {{ $vuetify.t(' It takes only 2 minutes') }} </p>
+            <v-layout justify-center>
+              <v-btn
+                color="blue"
+                dark
+                large>{{ $vuetify.t('Do the pre check in') }}</v-btn>
+
+            </v-layout><v-layout
+              justify-center
+              color="blue">
+              <a
+
+                href="/"
+              >{{ $vuetify.t ('If you do not see the button correctly, click here' )
+              }}</a>
+
+            </v-layout>
+            <p>{{ $vuetify.t ('If you do not effect the Pre Check-in your booking is still valid, you can still') }} </p>
+            <p>{{ $vuetify.t ('do it when you arrive at the facility.') }}</p>
+            <p>{{ $vuetify.t('If you received this message by mistake, please ignore this email ..') }}</p>
             <hr class="my-3">
-            <a
-              href="https://nuxtjs.org/"
-              target="_blank">Nuxt Documentation</a>
-            <br>
-            <a
-              href="https://github.com/nuxt/nuxt.js"
-              target="_blank">Nuxt GitHub</a>
+            <div class="text-xs-right">
+              <em><small>{{ $vuetify.t('Farewell') }}</small></em>
+            </div>
+            <div class="text-xs-right">
+              <em><small>{{ $vuetify.t('Name Hotel') }}</small></em>
+            </div>
           </v-card-text>
-          <v-card-actions>
-            <v-spacer/>
-            <v-btn
-              color="primary"
-              flat
-              nuxt
-              to="/inspire">Continue</v-btn>
-          </v-card-actions>
         </v-card>
       </v-flex>
     </v-layout>
@@ -57,13 +55,10 @@
 
 <script>
 import OtherClientForm from '../components/otherclient/OtherClientForm'
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+
 
 export default {
   components: {
-    Logo,
-    VuetifyLogo,
     OtherClientForm
   }
 }

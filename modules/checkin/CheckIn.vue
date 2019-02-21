@@ -1,50 +1,53 @@
 <template>
-    <v-layout
-            column
+  <v-layout
+    column
+    justify-center
+    align-center>
+    <v-flex
+      xs12
+      sm8
+      md6>
+      <div class="text-xs-center">
+        <logo/>
+        <vuetify-logo/>
+      </div>
+      <v-card>
+        <v-card-title class="headline">{{ $vuetify.t('Gentile') }} Nome_Utente </v-card-title>
+        <v-card-text>
+          <p> {{ $vuetify.t('To facilitate you on arrival at our facility') }} {Name Hotel}, {{ $vuetify.t('we invite you to') }} </p>
+          <p> {{ $vuetify.t('do the') }} {Pre Chech-In}  {{ $vuetify.t('for the prenotation number') }} {123412414}, {{ $vuetify.t('from') }}  {30-2-2019} {{ $vuetify.t('to') }}  </p>
+          <p> {2-3-2019}, {{ $vuetify.t('for') }}  {3} {{ $vuetify.t('people and') }}  {1} {{ $vuetify.t('room') }} .
+            {{ $vuetify.t(' It takes only 2 minutes') }} </p>
+          <v-layout justify-center>
+            <v-btn
+              color="blue"
+              dark
+              large>{{ $vuetify.t('Do the pre check in') }}</v-btn>
+
+          </v-layout><v-layout
             justify-center
-            align-center>
-        <v-flex
-                xs12
-                sm8
-                md6>
-            <div class="text-xs-center">
-                <logo/>
-                <vuetify-logo/>
-            </div>
-            <v-card>
-                <v-card-title class="headline">{Gentile} Nome_Utente </v-card-title>
-                <v-card-text>
-                    <p>Per agevolarti all'arrivo presso la nostra struttura {NOME_Hotel}, ti invitiamo a</p>
-                    <p>eseguire il {PreChechIn} per la prenotazione numero {123412414}, dal {30-2-2019} al </p>
-                    <p> {2-3-2019}, per {3} person e {1} camera. Bastano solo 2 minuti. </p>
-                    <v-layout justify-center><div>
-                        <v-btn
-                                color="blue-grey"
-                                dark
-                                large>Large Button</v-btn>
-                    </div>
-                    </v-layout><v-layout justify-center>
-                    <p>Se non vedi correttamente il pulsante, clicca qui <a>
-                        href="/"
-                    </a></p>
-                </v-layout>
-                    <p>Se non effetti il Pre Check-in la tua prenotazione e comunque valida, potrai comunque </p>
-                    <p> farlo al tuo arrivo in struttura.</p>
-                    <p> Se hai ricevuto questo messaggio per errore, ignora questa e-mail..</p>
-                    <hr class="my-3">
-                    <div class="text-xs-right">
-                        <em><small>{A presto}</small></em>
-                    </div>
-                    <div class="text-xs-right">
-                        <em><small>{Nome_Hotel}</small></em>
-                    </div>
-                </v-card-text>
-                <v-card-actions>
-                    <v-spacer/>
-                </v-card-actions>
-            </v-card>
-        </v-flex>
-    </v-layout>
+            color="blue">
+            <a
+
+              href="/"
+            >{{ $vuetify.t ('If you do not see the button correctly, click here' )
+            }}</a>
+
+          </v-layout>
+          <p>{{ $vuetify.t ('If you do not effect the Pre Check-in your booking is still valid, you can still') }} </p>
+          <p>{{ $vuetify.t ('do it when you arrive at the facility.') }}</p>
+          <p>{{ $vuetify.t('If you received this message by mistake, please ignore this email ..') }}</p>
+          <hr class="my-3">
+          <div class="text-xs-right">
+            <em><small>{{ $vuetify.t('Farewell') }}</small></em>
+          </div>
+          <div class="text-xs-right">
+            <em><small>{{ $vuetify.t('Name Hotel') }}</small></em>
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 <script>
 

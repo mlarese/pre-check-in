@@ -11,7 +11,7 @@
             size="60px"
           >
             <v-icon
-              color="red"
+              color="grey"
               icon="people"
               size="50px"
             >person</v-icon>
@@ -23,7 +23,7 @@
           md1
           my-4
         >
-          <span size>{{ $vuetify.t('Clients') }} 1  </span> {{ $vuetify.t('of') }} 3
+          <strong>{{ $vuetify.t('Clients') }} 1  </strong> <em><small>{{ $vuetify.t('of') }} 3</small></em>
         </v-flex>
 
         <v-spacer/>
@@ -39,8 +39,9 @@
           xs12
           sm3>
           <strong >{{ $vuetify.t('Tipology') }}</strong>
-          <v-layout>
-            <span >client</span>
+          <v-layout
+            mx-3>
+            <span >{{ $vuetify.t('CLIENT') }}</span>
           </v-layout>
         </v-flex>
 
@@ -48,8 +49,9 @@
           xs12
           sm3>
           <strong >{{ $vuetify.t('Name') }}</strong>
-          <v-layout mx-2>
+          <v-layout mx-1 >
             <v-text-field
+              box
             />
           </v-layout>
 
@@ -59,9 +61,9 @@
           xs12
           sm3>
           <strong >{{ $vuetify.t('Surname') }}</strong>
-          <v-layout mx-2>
+          <v-layout mx-1>
             <v-text-field
-
+              box
             />
           </v-layout>
 
@@ -71,7 +73,7 @@
           xs12
           sm3>
           <strong >{{ $vuetify.t('Sex') }}</strong>
-          <v-layout mx-2>
+          <v-layout mx-1>
             <v-combobox
               label="Select"
             />
@@ -95,11 +97,31 @@
           xs12
           sm3>
           <strong >{{ $vuetify.t('Date of birth') }}</strong>
-          <v-layout mx-2>
+          <v-menu
+            ref="menu2"
+            :close-on-content-click="true"
+            v-model="datePickerFrom"
+            :nudge-right="40"
+            :return-value.sync="date"
+            :disabled="filterActive"
+            transition="scale-transition"
+            offset-y
+            full-width
+            min-width="250px"
+          >
             <v-text-field
-
+              slot="activator"
+              :disabled="filterActive"
+              v-model="fltDateFrom"
+              :label="$vuetify.t('Date')"
+              box
+              readonly
+              append-icon="date_range"
             />
-          </v-layout>
+            <v-date-picker
+              v-model="fltDateFrom"
+              locale="ita" />
+          </v-menu>
 
         </v-flex>
 
@@ -107,7 +129,7 @@
           xs12
           sm3>
           <strong >{{ $vuetify.t('Place of Birth') }}</strong>
-          <v-layout mx-2>
+          <v-layout mx-1>
             <v-combobox
               label="Select"
             />
@@ -119,7 +141,7 @@
           xs12
           sm3>
           <strong >{{ $vuetify.t('Country of Birth') }}</strong>
-          <v-layout mx-2>
+          <v-layout mx-1>
             <v-combobox
               label="Select"
             />
@@ -143,9 +165,9 @@
           xs12
           sm3>
           <strong >{{ $vuetify.t('Residence') }}</strong>
-          <v-layout mx-2>
+          <v-layout mx-1>
             <v-text-field
-
+              box
             />
           </v-layout>
 
@@ -155,7 +177,7 @@
           xs12
           sm3>
           <strong >{{ $vuetify.t('Resident Country') }}</strong>
-          <v-layout mx-2 >
+          <v-layout mx-1>
             <v-combobox
               label="Select"
             />
@@ -172,7 +194,15 @@
 
 <script>
     export default {
-        name: "PrimaryClientForm"
+        name: "OtherClientForm",
+        data () {
+
+            return {
+                date: null,
+                datePickerFrom: true,
+
+            }
+        }
     }
 </script>
 
