@@ -75,6 +75,7 @@
           <v-layout mx-1>
             <v-combobox
               label="Select"
+              box
             />
           </v-layout>
 
@@ -102,7 +103,6 @@
             v-model="datePickerFrom"
             :nudge-right="40"
             :return-value.sync="date"
-            :disabled="filterActive"
             transition="scale-transition"
             offset-y
             full-width
@@ -110,9 +110,8 @@
           >
             <v-text-field
               slot="activator"
-              :disabled="filterActive"
-              v-model="fltDateFrom"
               :label="$vuetify.t('Date')"
+              v-model="fltDateFrom"
               box
               readonly
               append-icon="date_range"
@@ -143,6 +142,7 @@
           <v-layout mx-1>
             <v-combobox
               label="Select"
+              box
             />
           </v-layout>
 
@@ -179,6 +179,7 @@
           <v-layout mx-1>
             <v-combobox
               label="Select"
+              box
             />
           </v-layout>
 
@@ -191,6 +192,7 @@
           <v-layout mx-1>
             <v-combobox
               label="Select"
+              box
             />
           </v-layout>
 
@@ -215,6 +217,7 @@
           <v-layout mx-1>
             <v-combobox
               label="Select"
+              box
             />
           </v-layout>
 
@@ -239,6 +242,7 @@
           <v-layout mx-1>
             <v-combobox
               label="Select"
+              box
             />
           </v-layout>
 

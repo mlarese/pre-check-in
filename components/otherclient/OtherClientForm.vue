@@ -76,6 +76,7 @@
           <v-layout mx-1>
             <v-combobox
               label="Select"
+              box
             />
           </v-layout>
 
@@ -98,12 +99,10 @@
           sm3>
           <strong >{{ $vuetify.t('Date of birth') }}</strong>
           <v-menu
-            ref="menu2"
             :close-on-content-click="true"
             v-model="datePickerFrom"
             :nudge-right="40"
             :return-value.sync="date"
-            :disabled="filterActive"
             transition="scale-transition"
             offset-y
             full-width
@@ -132,6 +131,7 @@
           <v-layout mx-1>
             <v-combobox
               label="Select"
+              box
             />
           </v-layout>
 
@@ -144,6 +144,7 @@
           <v-layout mx-1>
             <v-combobox
               label="Select"
+              box
             />
           </v-layout>
 
@@ -180,6 +181,7 @@
           <v-layout mx-1>
             <v-combobox
               label="Select"
+              box
             />
           </v-layout>
 
