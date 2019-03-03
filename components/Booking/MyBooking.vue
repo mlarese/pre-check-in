@@ -29,7 +29,8 @@
   </v-layout>
 </template>
 
-<script>import {mapState} from 'vuex'
+<script>
+import {mapState} from 'vuex'
 export default {
     computed: {
         ...mapState('booking', ['$record', 'record'])

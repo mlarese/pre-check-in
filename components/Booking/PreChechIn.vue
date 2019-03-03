@@ -1,4 +1,4 @@
-<template>
+<template class="pre-check-in">
   <v-flex
     xs4
     sm2

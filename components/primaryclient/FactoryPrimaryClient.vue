@@ -1,7 +1,7 @@
-<template>
-  <v-layout 
-    pa-0 
-    class="country-factory">
+<template class="factory-primary-client">
+  <v-layout
+    pa-0
+    class="primary-client-factory">
     <component :is="currentComponent"/>
   </v-layout>
 </template>

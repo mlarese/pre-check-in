@@ -5,13 +5,13 @@
     align-center
   >
     <v-card class="elevation-0">
-      <v-card-title class="headline">{{ $vuetify.t('Gentile') }} Nome_Utente </v-card-title>
+      <v-card-title class="headline">{{ $vuetify.t('Gentile') }} {{ $record.user }} </v-card-title>
       <v-card-text>
         <span class="my-4"> {{ $vuetify.t('To facilitate you on arrival at our facility') }} <strong>{{ 'Name Hotel' }}</strong>, {{ $vuetify.t('we invite you to') }} </span>
         <br>
-        <span> {{ $vuetify.t('do the') }} <strong>{{ 'Pre Check-In' }}</strong>  {{ $vuetify.t('for the prenotation number') }} {123412414}, {{ $vuetify.t('from') }}  {30-2-2019} {{ $vuetify.t('to') }}  </span>
+        <span> {{ $vuetify.t('do the') }} <strong>{{ 'Pre Check-In' }}</strong>  {{ $vuetify.t('for the prenotation number') }} {{ $record.no_prenotation }}, {{ $vuetify.t('from') }}  {{ $record.arrival_date }} {{ $vuetify.t('to') }}  </span>
         <br>
-        <span > {2-3-2019}, {{ $vuetify.t('for') }}  {3} {{ $vuetify.t('people and') }}  {1} {{ $vuetify.t('room') }} .
+        <span > {{ $record.departure_date }}, {{ $vuetify.t('for') }}  {{ $record.no_client }} {{ $vuetify.t('people and') }}  {{ $record.no_room }} {{ $vuetify.t('room') }} .
           {{ $vuetify.t(' It takes only 2 minutes') }}
           <span class="group pa-1">
             <v-icon>schedule</v-icon>.
@@ -22,6 +22,7 @@
           justify-center
           class="my-2">
           <v-btn
+            href="/precheckin"
             color="blue"
             dark
             large>{{ $vuetify.t('Do the pre check in') }}</v-btn>
@@ -54,8 +55,11 @@
   </v-layout>
 </template>
 <script>
-
+  import {mapState} from 'vuex'
   export default {
+    computed: {
+        ...mapState('booking', ['$record', 'record'])
+    }
 
   }
 </script>

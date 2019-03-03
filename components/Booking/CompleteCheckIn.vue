@@ -1,5 +1,5 @@
-<template>
-
+<template class="complete-checkin">
+  <div>jh</div>
 </template>
 
 <script>

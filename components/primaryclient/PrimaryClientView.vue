@@ -1,4 +1,4 @@
-<template>
+<template class="primary-client-view">
   <v-layout row>
     <v-container>
       <v-layout>
@@ -49,7 +49,7 @@
           sm3>
           <strong >{{ $vuetify.t('Name') }}</strong>
           <v-layout mx-2>
-            <span >Co{{ $record.name }}urage</span>
+            <span >{{ $record.name }}</span>
           </v-layout>
 
         </v-flex>
@@ -69,7 +69,7 @@
           sm3>
           <strong >{{ $vuetify.t('Sex') }}</strong>
           <v-layout mx-2>
-            <span >Mal{{ $record.sex }}e</span>
+            <span >{{ $record.sex }}</span>
           </v-layout>
 
         </v-flex>

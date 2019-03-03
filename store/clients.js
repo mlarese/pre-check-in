@@ -55,7 +55,7 @@ export const mutations = {
 }
 export const actions = {
     update ({dispatch, commit, state}, {data, id}) {
-        const url = `/code/${id}`
+        const url = `/clients/${id}`
         return dispatch('api/put', {url, data}, root)
             .then(() => {
                 const index = state.list.findIndex(o => o.code === id)
@@ -94,7 +94,7 @@ export const actions = {
         }
     },
     insert ({dispatch, commit}, {data}) {
-        const url = `/code`
+        const url = `/clients`
         return dispatch('api/post', {url, data}, root)
     },
     load ({dispatch, commit, state}, {id = null, force = true, options = {}}) {
@@ -102,13 +102,13 @@ export const actions = {
             return
         }
         if (id === null) {
-            return dispatch('api/get', {url: `/code`, options, debug: false}, root)
+            return dispatch('api/get', {url: `/clients`, options, debug: false}, root)
                 .then(res => {
                     commit('setList', res.data)
                     return res
                 })
         } else {
-            return dispatch('api/get', {url: `/code/{id}`, options}, root)
+            return dispatch('api/get', {url: `/clients/{id}`, options}, root)
                 .then(res => {
                     commit('setRecord', res.data)
                     return res

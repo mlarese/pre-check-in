@@ -1,9 +1,9 @@
-<template>
+<template class="primary-client-management">
   <v-flex
     container
     pa-0>
     <v-card>
-      <country-form />
+      <PrimaryClientForm/>
     </v-card>
   </v-flex>
 </template>

@@ -11,11 +11,11 @@
         computed: {
             ...mapState('clients', ['$record', 'record'])
         },
-        fetch({store, param, query}) {
+        fetch({store, params, query}) {
             const id = params.id
             const mode = query.mode
 
-            if (getters.isAddMode) {
+            if (mode) {
                 store.commit('clients/setEditMode', null, root)
             }else {
                 store.commit('clients/setMode', mode, root)

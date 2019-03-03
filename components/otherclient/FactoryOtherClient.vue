@@ -1,5 +1,5 @@
-<template>
-
+<template class="factory-other-client">
+  <div>ghg</div>
 </template>
 
 <script>

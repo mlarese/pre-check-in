@@ -1,4 +1,4 @@
-<template>
+<template class="other-client-view">
   <v-layout row>
     <v-container>
       <v-layout>

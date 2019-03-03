@@ -1,5 +1,5 @@
-<template>
-
+<template class="other-client-management">
+  <div>vhg</div>
 </template>
 
 <script>

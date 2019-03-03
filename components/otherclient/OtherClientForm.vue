@@ -1,4 +1,4 @@
-<template>
+<template class="other-client-form">
   <v-layout row>
     <v-container>
       <v-layout>
