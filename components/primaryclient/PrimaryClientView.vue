@@ -40,7 +40,7 @@
           sm3>
           <strong >{{ $vuetify.t('Tipology') }}</strong>
           <v-layout mx-2>
-            <span >client</span>
+            <span >{{ $record.client }}</span>
           </v-layout>
         </v-flex>
 
@@ -49,7 +49,7 @@
           sm3>
           <strong >{{ $vuetify.t('Name') }}</strong>
           <v-layout mx-2>
-            <span >Courage</span>
+            <span >Co{{ $record.name }}urage</span>
           </v-layout>
 
         </v-flex>
@@ -59,7 +59,7 @@
           sm3>
           <strong >{{ $vuetify.t('Surname') }}</strong>
           <v-layout mx-2>
-            <span >Asemota</span>
+            <span >{{ $record.surname }}</span>
           </v-layout>
 
         </v-flex>
@@ -69,7 +69,7 @@
           sm3>
           <strong >{{ $vuetify.t('Sex') }}</strong>
           <v-layout mx-2>
-            <span >Male</span>
+            <span >Mal{{ $record.sex }}e</span>
           </v-layout>
 
         </v-flex>
@@ -91,7 +91,7 @@
           sm3>
           <strong >{{ $vuetify.t('Date of birth') }}</strong>
           <v-layout mx-2>
-            <span >21-03-1991</span>
+            <span >{{ $record.date_of_birth }}</span>
           </v-layout>
 
         </v-flex>
@@ -101,7 +101,7 @@
           sm3>
           <strong >{{ $vuetify.t('Place of Birth') }}</strong>
           <v-layout mx-2>
-            <span >Los Angelos</span>
+            <span >{{ $record.place_of_birth }}</span>
           </v-layout>
 
         </v-flex>
@@ -111,7 +111,7 @@
           sm3>
           <strong >{{ $vuetify.t('Country of Birth') }}</strong>
           <v-layout mx-2>
-            <span >USA</span>
+            <span >{{ $record.country_of_birth }}</span>
           </v-layout>
 
         </v-flex>
@@ -133,7 +133,7 @@
           sm3>
           <strong >{{ $vuetify.t('Residence') }}</strong>
           <v-layout mx-2>
-            <span >American</span>
+            <span >{{ $record.residence }}</span>
           </v-layout>
 
         </v-flex>
@@ -143,7 +143,7 @@
           sm3>
           <strong >{{ $vuetify.t('Resident Country') }}</strong>
           <v-layout mx-2>
-            <span >USA</span>
+            <span >{{ $record.resident_country }}</span>
           </v-layout>
 
         </v-flex>
@@ -153,7 +153,7 @@
           sm3>
           <strong >{{ $vuetify.t('City Of Resident') }}</strong>
           <v-layout mx-2>
-            <span >Los Angelos</span>
+            <span >{{ $record.city_of_resident }}</span>
           </v-layout>
 
         </v-flex>
@@ -175,7 +175,7 @@
           sm3>
           <strong >{{ $vuetify.t('Type of Document') }}</strong>
           <v-layout mx-2>
-            <span >ID Card</span>
+            <span >{{ $record.type_of_document }}</span>
           </v-layout>
 
         </v-flex>
@@ -185,7 +185,7 @@
           sm3>
           <strong >{{ $vuetify.t('Document Number') }}</strong>
           <v-layout mx-2>
-            <span >AD23526G2</span>
+            <span >{{ $record.document_number }}</span>
           </v-layout>
 
         </v-flex>
@@ -195,7 +195,7 @@
           sm3>
           <strong >{{ $vuetify.t('Place Of Release') }}</strong>
           <v-layout mx-2>
-            <span >Accra</span>
+            <span >{{ $record.place_of_release }}</span>
           </v-layout>
 
         </v-flex>
@@ -205,8 +205,15 @@
 </template>
 
 <script>
+    import {mapState, mapMutations} from 'vuex'
     export default {
-        name: "PrimaryClientForm"
+        computed: {
+            ...mapState('clients', ['$record', 'record'])
+        },
+        methods: {
+            ...mapMutations('clients', ['setEditMode'])
+        },
+
     }
 </script>
 

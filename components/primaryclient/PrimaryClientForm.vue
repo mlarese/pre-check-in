@@ -50,7 +50,9 @@
           <strong >{{ $vuetify.t('Name') }}</strong>
           <v-layout mx-1>
             <v-text-field
+              v-model="$record.name"
               box
+              hide-details
             />
           </v-layout>
 
@@ -62,7 +64,9 @@
           <strong >{{ $vuetify.t('Surname') }}</strong>
           <v-layout mx-1>
             <v-text-field
+              v-model="$record.surname"
               box
+              hide-details
             />
           </v-layout>
 
@@ -74,8 +78,10 @@
           <strong >{{ $vuetify.t('Sex') }}</strong>
           <v-layout mx-1>
             <v-combobox
+              v-model="$record.sex"
               label="Select"
               box
+              hide-details
             />
           </v-layout>
 
@@ -129,7 +135,9 @@
           <strong >{{ $vuetify.t('Place of Birth') }}</strong>
           <v-layout mx-1>
             <v-combobox
+              v-model="$record.place_of_birth"
               label="Select"
+              hide-details
             />
           </v-layout>
 
@@ -141,8 +149,10 @@
           <strong >{{ $vuetify.t('Country of Birth') }}</strong>
           <v-layout mx-1>
             <v-combobox
+              v-model="$record.country_of_birth"
               label="Select"
               box
+              hide-details
             />
           </v-layout>
 
@@ -166,7 +176,9 @@
           <strong >{{ $vuetify.t('Residence') }}</strong>
           <v-layout mx-1>
             <v-text-field
+              v-model="$record.residence"
               box
+              hide-details
             />
           </v-layout>
 
@@ -178,8 +190,10 @@
           <strong >{{ $vuetify.t('Resident Country') }}</strong>
           <v-layout mx-1>
             <v-combobox
+              v-model="$record.resident_country"
               label="Select"
               box
+              hide-details
             />
           </v-layout>
 
@@ -191,8 +205,10 @@
           <strong >{{ $vuetify.t('City Of Resident') }}</strong>
           <v-layout mx-1>
             <v-combobox
+              v-model="$record.city_of_resident"
               label="Select"
               box
+              hide-details
             />
           </v-layout>
 
@@ -216,8 +232,10 @@
           <strong >{{ $vuetify.t('Type of Document') }}</strong>
           <v-layout mx-1>
             <v-combobox
+              v-model="$record.type_of_document"
               label="Select"
               box
+              hide-details
             />
           </v-layout>
 
@@ -229,7 +247,9 @@
           <strong >{{ $vuetify.t('Document Number') }}</strong>
           <v-layout mx-1>
             <v-text-field
+              v-model="$record.document_number"
               box
+              hide-details
             />
           </v-layout>
 
@@ -241,8 +261,10 @@
           <strong >{{ $vuetify.t('Place Of Release') }}</strong>
           <v-layout mx-1>
             <v-combobox
+              v-model="$record.place_of_release"
               label="Select"
               box
+              hide-details
             />
           </v-layout>
 
@@ -253,6 +275,7 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
         name: "PrimaryClientForm",
         data () {
@@ -262,7 +285,11 @@
                 datePickerFrom: true,
 
             }
+        },
+        computed: {
+            ...mapState('clients', ['$record', 'record',])
         }
+
     }
 </script>
 

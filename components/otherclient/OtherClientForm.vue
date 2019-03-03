@@ -195,6 +195,7 @@
 </template>
 
 <script>
+    import {mapActions, mapState} from 'vuex'
     export default {
         name: "OtherClientForm",
         data () {
@@ -204,6 +205,12 @@
                 datePickerFrom: true,
 
             }
+        },
+        computed: {
+            ...mapState('clients', ['$record', 'record'])
+        },
+        methods: {
+            ...mapActions('clients', ['cancel', 'save', 'update'])
         }
     }
 </script>
