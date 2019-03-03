@@ -9,6 +9,8 @@ export const state = () => {
         $record: {},
         addRecord: {},
         resetItem: {},
+        form: {valid: false, dirty: false},
+        mountingForm: false,
         grid: {pagination: {}},
         mode: 'add',
     }
@@ -44,7 +46,9 @@ export const mutations = {
     },
     setMode (state, payload) { state.mode = payload },
     setForm (state, payload) { state.form = payload },
-    setEditMode (state) { state.mode = 'edit' },
+    setFormValid (s, p) { s.form.valid = p },
+    setFormDirty (s, p) { s.form.dirty = p },
+    setEditMode (s) { s.mode = 'edit' },
     setViewMode (s) { s.mode = 'view' },
     setAddMode (state) { state.mode = 'add' }
 

@@ -1,13 +1,30 @@
 <template>
-
+  <v-layout 
+    pa-0 
+    class="country-factory">
+    <component :is="currentComponent"/>
+  </v-layout>
 </template>
 
 <script>
+    import PrimaryClientManagement from './PrimaryClientManagement'
+    import PrimaryClientView from './PrimaryClientView'
+    import {mapState} from 'vuex'
     export default {
-        name: "FactoryPrimaryClient"
+        components: {PrimaryClientManagement, PrimaryClientView},
+        computed: {
+            ...mapState('clients', ['mode']),
+            currentComponent () {
+                if (this.mode === 'edit') {
+                    return PrimaryClientManagement
+                } else {
+                    return PrimaryClientView
+                }
+            }
+        }
     }
 </script>
 
-<style scoped>
+<style>
 
 </style>
