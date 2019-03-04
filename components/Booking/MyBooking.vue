@@ -2,6 +2,10 @@
   <div>
     <v-layout>
       <v-flex
+        v-for="(item, i) in list"
+        :item="item"
+        :index="i"
+        :key="i"
         xs12
         class="my-">
         <v-card
@@ -34,7 +38,8 @@
 <script>
 export default {
     props: {
-        item: {type: Object, default: () => {}}
+        item: {type: Object, default: () => {}},
+        index: {type: Number, default: 0}
     }
 
 }
