@@ -2,7 +2,6 @@
   <v-layout
     pa-0
     class="primary-client-factory"
-    props:="item.index"
   >
     <component :is="currentComponent"/>
   </v-layout>
@@ -10,17 +9,17 @@
 
 <script>
     import PrimaryClientManagement from './PrimaryClientManagement'
-    import PrimaryClientView from './PrimaryClientView'
+    import ClientView from './ClientView'
     import {mapState} from 'vuex'
     export default {
-        components: {PrimaryClientManagement, PrimaryClientView},
+        components: {PrimaryClientManagement, ClientView},
         computed: {
             ...mapState('clients', ['mode']),
             currentComponent () {
                 if (this.mode === 'edit') {
                     return PrimaryClientManagement
                 } else {
-                    return PrimaryClientView
+                    return ClientView
                 }
             }
         }

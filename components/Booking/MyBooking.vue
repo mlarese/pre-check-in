@@ -13,13 +13,13 @@
             <br>
             <span > {{ $vuetify.t('Nr. Prenotation') }}: <strong>{{ $record.no_prenotation }}</strong></span>
             <br class="mx-2">
-            <span> {{ $vuetify.t('Arrival Date') }}: <strong>{{ $record.arrival_date }}</strong></span>
+            <span> {{ $vuetify.t('Arrival Date') }}: <strong>{{ $record.reservation_ps_arrive_date }}</strong></span>
             <br>
-            <span> {{ $vuetify.t('Departure Date') }}: <strong>{{ $record.departure_date }}</strong></span>
+            <span> {{ $vuetify.t('Departure Date') }}: <strong>{{ $record.reservation_ps_leave_date }}</strong></span>
             <br>
             <span> {{ $vuetify.t('Nr. Visitor') }}: <strong>{{ $record.no_client }}</strong></span>
             <br>
-            <span> {{ $vuetify.t('Nr. Room') }}: <strong>{{ $record.no_room }}</strong></span>
+            <span> {{ $vuetify.t('Nr. Room') }}: <strong>{{ $record.reservation_ps_room_n }}</strong></span>
             <br>
             <span> {{ $vuetify.t('Total Amount') }}: <strong>{{ $record.total_amount }}</strong></span>
           </div>

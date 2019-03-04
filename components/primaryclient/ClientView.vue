@@ -51,7 +51,7 @@
           sm3>
           <strong >{{ $vuetify.t('Name') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.name }}</span>
+            <span >{{ $record.reservation_ps_name }}</span>
           </v-layout>
 
         </v-flex>
@@ -61,7 +61,7 @@
           sm3>
           <strong >{{ $vuetify.t('Surname') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.surname }}</span>
+            <span >{{ $record.reservation_ps_surname }}</span>
           </v-layout>
 
         </v-flex>
@@ -71,7 +71,7 @@
           sm3>
           <strong >{{ $vuetify.t('Sex') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.sex }}</span>
+            <span >{{ $record.reservation_ps_gender }}</span>
           </v-layout>
 
         </v-flex>
@@ -93,7 +93,7 @@
           sm3>
           <strong >{{ $vuetify.t('Date of birth') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.date_of_birth }}</span>
+            <span >{{ $record.reservation_ps_birthdate }}</span>
           </v-layout>
 
         </v-flex>
@@ -103,7 +103,7 @@
           sm3>
           <strong >{{ $vuetify.t('Place of Birth') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.place_of_birth }}</span>
+            <span >{{ $record.reservation_ps_birthplace }}</span>
           </v-layout>
 
         </v-flex>
@@ -113,7 +113,7 @@
           sm3>
           <strong >{{ $vuetify.t('Country of Birth') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.country_of_birth }}</span>
+            <span >{{ $record.reservation_ps_birthcounty }}</span>
           </v-layout>
 
         </v-flex>
@@ -135,7 +135,7 @@
           sm3>
           <strong >{{ $vuetify.t('Residence') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.residence }}</span>
+            <span >{{ $record.reservation_ps_cittadinanza }}</span>
           </v-layout>
 
         </v-flex>
@@ -145,7 +145,7 @@
           sm3>
           <strong >{{ $vuetify.t('Resident Country') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.resident_country }}</span>
+            <span >{{ $record.reservation_ps_country }}</span>
           </v-layout>
 
         </v-flex>
@@ -155,7 +155,7 @@
           sm3>
           <strong >{{ $vuetify.t('City Of Resident') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.city_of_resident }}</span>
+            <span >{{ $record.reservation_ps_state }}</span>
           </v-layout>
 
         </v-flex>
@@ -177,7 +177,7 @@
           sm3>
           <strong >{{ $vuetify.t('Type of Document') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.type_of_document }}</span>
+            <span >{{ $record.reservation_ps_document_type }}</span>
           </v-layout>
 
         </v-flex>
@@ -187,7 +187,7 @@
           sm3>
           <strong >{{ $vuetify.t('Document Number') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.document_number }}</span>
+            <span >{{ $record.reservation_ps_doc_type_code }}</span>
           </v-layout>
 
         </v-flex>
@@ -197,7 +197,7 @@
           sm3>
           <strong >{{ $vuetify.t('Place Of Release') }}</strong>
           <v-layout mx-2>
-            <span >{{ $record.place_of_release }}</span>
+            <span >{{ $record.place_of_release_document }}</span>
           </v-layout>
 
         </v-flex>

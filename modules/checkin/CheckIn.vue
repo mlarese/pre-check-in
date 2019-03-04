@@ -6,13 +6,13 @@
     align-center
   >
     <v-card class="elevation-0">
-      <v-card-title class="headline">{{ $vuetify.t('Gentile') }} {{ item.user }} </v-card-title>
+      <v-card-title class="headline">{{ $vuetify.t('Gentile') }} {{ $record.user }} </v-card-title>
       <v-card-text>
         <span class="my-4"> {{ $vuetify.t('To facilitate you on arrival at our facility') }} <strong>{{ 'Name Hotel' }}</strong>, {{ $vuetify.t('we invite you to') }} </span>
         <br>
-        <span> {{ $vuetify.t('do the') }} <strong>{{ 'Pre Check-In' }}</strong>  {{ $vuetify.t('for the prenotation number') }} {{ $record.no_prenotation }}, {{ $vuetify.t('from') }}  {{ $record.arrival_date }} {{ $vuetify.t('to') }}  </span>
+        <span> {{ $vuetify.t('do the') }} <strong>{{ 'Pre Check-In' }}</strong>  {{ $vuetify.t('for the prenotation number') }} {{ $record.no_prenotation }}, {{ $vuetify.t('from') }}  {{ $record.reservation_ps_arrive_date }} {{ $vuetify.t('to') }}  </span>
         <br>
-        <span > {{ $record.departure_date }}, {{ $vuetify.t('for') }}  {{ $record.no_client }} {{ $vuetify.t('people and') }}  {{ $record.no_room }} {{ $vuetify.t('room') }} .
+        <span > {{ $record.reservation_ps_leave_date }}, {{ $vuetify.t('for') }}  {{ $record.no_client }} {{ $vuetify.t('people and') }}  {{ $record.reservation_ps_room_n }} {{ $vuetify.t('room') }} .
           {{ $vuetify.t(' It takes only 2 minutes') }}
           <span class="group pa-1">
             <v-icon>schedule</v-icon>.
