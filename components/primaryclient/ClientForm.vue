@@ -54,7 +54,6 @@
           <v-layout mx-1>
             <v-text-field
               v-model="item.reservation_ps_name"
-              props:="item.index"
               box
               hide-details
             />

@@ -1,7 +1,7 @@
 [
   {
     "id": 2,
-    "user": "Mcfadden",
+    "user1": "Mcfadden",
     "no_prenotation": 1218589,
     "place_of_release_document": "Winchester",
     "reservation_ps_document_type": "ID card",
@@ -13,7 +13,7 @@
   },
   {
     "id": 12,
-    "user": "Yates",
+    "user1": "Yates",
     "no_prenotation": 8799561,
     "place_of_release_document": "Santel",
     "reservation_ps_document_type": "ID card",
@@ -25,7 +25,7 @@
   },
   {
     "id": 22,
-    "user": "Blanca",
+    "user1": "Blanca",
     "no_prenotation": 8162518,
     "place_of_release_document": "Baker",
     "reservation_ps_document_type": "passport id",
@@ -37,7 +37,7 @@
   },
   {
     "id": 32,
-    "user": "Lorrie",
+    "user1": "Lorrie",
     "no_prenotation": 709176,
     "place_of_release_document": "Bancroft",
     "reservation_ps_document_type": "ID card",
@@ -49,7 +49,7 @@
   },
   {
     "id": 42,
-    "user": "Burgess",
+    "user1": "Burgess",
     "no_prenotation": 6082316,
     "place_of_release_document": "Croom",
     "reservation_ps_document_type": "driving license",
