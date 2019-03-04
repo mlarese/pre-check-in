@@ -1,6 +1,6 @@
 <template>
   <div>
-    <factory-primary-client
+    <primary-client-form
       v-for="(guest, i) in list"
       :item="guest"
       :index="i"
@@ -10,10 +10,10 @@
 
 <script>
     import {mapState} from 'vuex'
-    import FactoryPrimaryClient from '../../components/primaryclient/FactoryPrimaryClient'
+    import PrimaryClientForm from '../../components/primaryclient/PrimaryClientForm'
     const root = {root: true}
     export default {
-        components: {FactoryPrimaryClient},
+        components: {PrimaryClientForm},
         computed: {
             ...mapState('clients', ['list']),
         },

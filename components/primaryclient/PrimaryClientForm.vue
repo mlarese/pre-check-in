@@ -20,16 +20,18 @@
         </v-flex>
         <v-flex
           xs4
-          sm2
-          md1
+          sm3
+          md2
           my-4
         >
-          <strong>{{ $vuetify.t('Clients') }} 1  </strong> <em><small>{{ $vuetify.t('of') }} 3</small></em>
+          <strong class="title">{{ $vuetify.t('Clients') }} 1  </strong> <em><small>{{ $vuetify.t('of') }} 3</small></em>
         </v-flex>
 
         <v-spacer/>
-        <v-btn color="info">{{ $vuetify.t('Edit') }}</v-btn>
-        <v-btn color="info">{{ $vuetify.t('Save') }}</v-btn>
+        <v-btn
+          :disabled="!addMode"
+          color="blue">{{ $vuetify.t('Edit') }}</v-btn>
+        <v-btn color="blue">{{ $vuetify.t('Save') }}</v-btn>
       </v-layout>
 
       <v-layout
@@ -67,7 +69,6 @@
           <v-layout mx-1>
             <v-text-field
               v-model="item.surname"
-              props:="item.index"
               box
               hide-details
             />
@@ -83,7 +84,6 @@
             <v-combobox
               v-model="item.sex"
               label="Select"
-              props:="item.index"
               box
               hide-details
             />
@@ -122,7 +122,6 @@
               slot="activator"
               :label="$vuetify.t('Date')"
               v-model="fltDateFrom"
-              props:="item.index"
               box
               readonly
               append-icon="date_range"
@@ -142,8 +141,8 @@
             <v-combobox
               v-model="item.place_of_birth"
               label="Select"
-              props:="item.index"
               hide-details
+              box
             />
           </v-layout>
 
@@ -157,7 +156,6 @@
             <v-combobox
               v-model="item.country_of_birth"
               label="Select"
-              props:="item.index"
               box
               hide-details
             />
@@ -184,7 +182,6 @@
           <v-layout mx-1>
             <v-text-field
               v-model="item.residence"
-              props:="item.index"
               box
               hide-details
             />
@@ -200,7 +197,6 @@
             <v-combobox
               v-model="item.resident_country"
               label="Select"
-              props:="item.index"
               box
               hide-details
             />
@@ -216,7 +212,6 @@
             <v-combobox
               v-model="item.city_of_resident"
               label="Select"
-              props:="item.index"
               box
               hide-details
             />
@@ -244,7 +239,6 @@
             <v-combobox
               v-model="item.type_of_document"
               label="Select"
-              props:="item.index"
               box
               hide-details
             />
@@ -259,7 +253,6 @@
           <v-layout mx-1>
             <v-text-field
               v-model="item.document_number"
-              props:="item.index"
               box
               hide-details
             />
@@ -275,7 +268,6 @@
             <v-combobox
               v-model="item.place_of_release"
               label="Select"
-              props:="item.index"
               box
               hide-details
             />
@@ -288,9 +280,13 @@
 </template>
 
 <script>
+    import {mapGetters} from 'vuex'
     export default {
         name: "PrimaryClientForm",
-        data () {
+        props: {
+            item: {type: Object, default: () => {}},
+            index: {type: Number, default: 0}
+        },data () {
 
             return {
                 date: null,
@@ -298,6 +294,12 @@
 
             }
         },
+        computed: {
+            ...mapGetters('clients', ['isAddMode', 'isEditMode', 'isView'])
+
+        },
+
+
 
     }
 </script>

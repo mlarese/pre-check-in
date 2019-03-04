@@ -1,7 +1,9 @@
 <template class="factory-primary-client">
   <v-layout
     pa-0
-    class="primary-client-factory">
+    class="primary-client-factory"
+    props:="item.index"
+  >
     <component :is="currentComponent"/>
   </v-layout>
 </template>
