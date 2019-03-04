@@ -1,7 +1,10 @@
 <template>
-  <factory-primary-client
-    v-for="($record, i) in list"
-    :key="i"/>
+  <div>
+    kkkkkkkkkkkkk
+    <factory-primary-client
+      v-for="($record, i) in list"
+      :key="i"/>
+  </div>
 </template>
 
 <script>
@@ -14,6 +17,7 @@
             ...mapState('clients', ['$record', 'record', 'list'])
         },
         fetch ({store}) {
+          alert('')
             store.dispatch('clients/load', {}, root)
         }
     }
