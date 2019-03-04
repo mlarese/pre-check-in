@@ -5,7 +5,8 @@
         <v-flex
           xs4
           sm2
-          md1>
+          md1
+        >
           <v-avatar
             slot="activator"
             size="60px"
@@ -50,7 +51,8 @@
           <strong >{{ $vuetify.t('Name') }}</strong>
           <v-layout mx-1>
             <v-text-field
-              v-model="$record.name"
+              v-model="item.name"
+              props:="item.index"
               box
               hide-details
             />
@@ -64,7 +66,8 @@
           <strong >{{ $vuetify.t('Surname') }}</strong>
           <v-layout mx-1>
             <v-text-field
-              v-model="$record.surname"
+              v-model="item.surname"
+              props:="item.index"
               box
               hide-details
             />
@@ -78,8 +81,9 @@
           <strong >{{ $vuetify.t('Sex') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="$record.sex"
+              v-model="item.sex"
               label="Select"
+              props:="item.index"
               box
               hide-details
             />
@@ -118,6 +122,7 @@
               slot="activator"
               :label="$vuetify.t('Date')"
               v-model="fltDateFrom"
+              props:="item.index"
               box
               readonly
               append-icon="date_range"
@@ -135,8 +140,9 @@
           <strong >{{ $vuetify.t('Place of Birth') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="$record.place_of_birth"
+              v-model="item.place_of_birth"
               label="Select"
+              props:="item.index"
               hide-details
             />
           </v-layout>
@@ -149,8 +155,9 @@
           <strong >{{ $vuetify.t('Country of Birth') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="$record.country_of_birth"
+              v-model="item.country_of_birth"
               label="Select"
+              props:="item.index"
               box
               hide-details
             />
@@ -176,7 +183,8 @@
           <strong >{{ $vuetify.t('Residence') }}</strong>
           <v-layout mx-1>
             <v-text-field
-              v-model="$record.residence"
+              v-model="item.residence"
+              props:="item.index"
               box
               hide-details
             />
@@ -190,8 +198,9 @@
           <strong >{{ $vuetify.t('Resident Country') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="$record.resident_country"
+              v-model="item.resident_country"
               label="Select"
+              props:="item.index"
               box
               hide-details
             />
@@ -205,8 +214,9 @@
           <strong >{{ $vuetify.t('City Of Resident') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="$record.city_of_resident"
+              v-model="item.city_of_resident"
               label="Select"
+              props:="item.index"
               box
               hide-details
             />
@@ -232,8 +242,9 @@
           <strong >{{ $vuetify.t('Type of Document') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="$record.type_of_document"
+              v-model="item.type_of_document"
               label="Select"
+              props:="item.index"
               box
               hide-details
             />
@@ -247,7 +258,8 @@
           <strong >{{ $vuetify.t('Document Number') }}</strong>
           <v-layout mx-1>
             <v-text-field
-              v-model="$record.document_number"
+              v-model="item.document_number"
+              props:="item.index"
               box
               hide-details
             />
@@ -261,8 +273,9 @@
           <strong >{{ $vuetify.t('Place Of Release') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="$record.place_of_release"
+              v-model="item.place_of_release"
               label="Select"
+              props:="item.index"
               box
               hide-details
             />
@@ -275,7 +288,6 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex'
     export default {
         name: "PrimaryClientForm",
         data () {
@@ -286,9 +298,6 @@
 
             }
         },
-        computed: {
-            ...mapState('clients', ['$record', 'record',])
-        }
 
     }
 </script>

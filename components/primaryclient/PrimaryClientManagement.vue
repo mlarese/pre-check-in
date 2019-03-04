@@ -18,18 +18,7 @@
         },
         computed: {
             ...mapState('clients', ['$record', 'record'])
-        },
-        methods: {
-            ...mapActions('clients', ['save']),
-            onSave () {
-                this.save({data: this.$record, id: this.$record._id})
-                    .then(r => {
-                        this.$router.push('clients')
-                        return r
-                    })
-            }
-        },
-
+        }
 
     }
 </script>

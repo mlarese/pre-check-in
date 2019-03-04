@@ -1,8 +1,9 @@
 <template>
   <div>
-    kkkkkkkkkkkkk
     <factory-primary-client
-      v-for="($record, i) in list"
+      v-for="(guest, i) in list"
+      :item="guest"
+      :index="i"
       :key="i"/>
   </div>
 </template>
@@ -14,10 +15,9 @@
     export default {
         components: {FactoryPrimaryClient},
         computed: {
-            ...mapState('clients', ['$record', 'record', 'list'])
+            ...mapState('clients', ['list']),
         },
-        fetch ({store}) {
-          alert('')
+        fetch({store}) {
             store.dispatch('clients/load', {}, root)
         }
     }

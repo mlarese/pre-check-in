@@ -69,7 +69,6 @@ export const actions = {
         commit('setAddMode')
     },
     save ({dispatch, commit, state, getters}) {
-        // recupero $record da state
         let data = state.$record
 
         if (getters.isAddMode) {
@@ -79,12 +78,10 @@ export const actions = {
                     commit('set$Record', {})
                 })
         } else {
-            // recupero l'id che è il codice per fare la put
             let id = data.code
             return dispatch('update', {data, id})
-            // svuoto $record
+
                 .then(() => commit('set$Record', {}))
-                // ritorno in addMode
                 .then(() => commit('setAddMode'))
         }
     },

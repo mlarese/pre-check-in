@@ -19,15 +19,17 @@
         </v-flex>
         <v-flex
           xs4
-          sm2
-          md1
+          sm3
+          md2
           my-4
         >
-          <strong>{{ $vuetify.t('Clients') }} 1  </strong> {{ $vuetify.t('of') }} 3
+          <strong class="title">{{ $vuetify.t('Clients') }} 1  </strong> {{ $vuetify.t('of') }} 3
         </v-flex>
 
         <v-spacer/>
-        <v-btn color="info">{{ $vuetify.t('Edit') }}</v-btn>
+        <v-btn
+          color="info"
+          @click="isEditMode">{{ $vuetify.t('Edit') }}</v-btn>
         <v-btn color="info">{{ $vuetify.t('Save') }}</v-btn>
       </v-layout>
 
@@ -205,13 +207,13 @@
 </template>
 
 <script>
-    import {mapState, mapMutations} from 'vuex'
+    import {mapState, mapGetters} from 'vuex'
     export default {
         computed: {
             ...mapState('clients', ['$record', 'record'])
         },
         methods: {
-            ...mapMutations('clients', ['setEditMode'])
+            ...mapGetters('clients', ['isEditMode'])
         },
 
     }
