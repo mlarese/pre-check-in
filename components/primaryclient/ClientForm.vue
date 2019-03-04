@@ -53,7 +53,7 @@
           <strong >{{ $vuetify.t('Name') }}</strong>
           <v-layout mx-1>
             <v-text-field
-              v-model="item.name"
+              v-model="item.reservation_ps_name"
               props:="item.index"
               box
               hide-details
@@ -68,7 +68,7 @@
           <strong >{{ $vuetify.t('Surname') }}</strong>
           <v-layout mx-1>
             <v-text-field
-              v-model="item.surname"
+              v-model="item.reservation_ps_surname"
               box
               hide-details
             />
@@ -82,7 +82,7 @@
           <strong >{{ $vuetify.t('Sex') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="item.sex"
+              v-model="item.reservation_ps_gender"
               label="Select"
               box
               hide-details
@@ -121,7 +121,7 @@
             <v-text-field
               slot="activator"
               :label="$vuetify.t('Date')"
-              v-model="fltDateFrom"
+              v-model="item.reservation_ps_birthdate"
               box
               readonly
               append-icon="date_range"
@@ -139,7 +139,7 @@
           <strong >{{ $vuetify.t('Place of Birth') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="item.place_of_birth"
+              v-model="item.reservation_ps_birthplace"
               label="Select"
               hide-details
               box
@@ -154,7 +154,7 @@
           <strong >{{ $vuetify.t('Country of Birth') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="item.country_of_birth"
+              v-model="item.reservation_ps_birthplace"
               label="Select"
               box
               hide-details
@@ -178,10 +178,10 @@
         <v-flex
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Residence') }}</strong>
+          <strong >{{ $vuetify.t('Resident') }}</strong>
           <v-layout mx-1>
             <v-text-field
-              v-model="item.residence"
+              v-model="item.reservation_ps_cittadinanza"
               box
               hide-details
             />
@@ -195,7 +195,7 @@
           <strong >{{ $vuetify.t('Resident Country') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="item.resident_country"
+              v-model="item.reservation_ps_country"
               label="Select"
               box
               hide-details
@@ -210,7 +210,7 @@
           <strong >{{ $vuetify.t('City Of Resident') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="item.city_of_resident"
+              v-model="item.reservation_ps_state"
               label="Select"
               box
               hide-details
@@ -237,7 +237,7 @@
           <strong >{{ $vuetify.t('Type of Document') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="item.type_of_document"
+              v-model="item.reservation_ps_document_type"
               label="Select"
               box
               hide-details
@@ -252,7 +252,7 @@
           <strong >{{ $vuetify.t('Document Number') }}</strong>
           <v-layout mx-1>
             <v-text-field
-              v-model="item.document_number"
+              v-model="item.reservation_ps_doc_type_code"
               box
               hide-details
             />
@@ -266,7 +266,7 @@
           <strong >{{ $vuetify.t('Place Of Release') }}</strong>
           <v-layout mx-1>
             <v-combobox
-              v-model="item.place_of_release"
+              v-model="item.reservation_ps_birthcounty"
               label="Select"
               box
               hide-details

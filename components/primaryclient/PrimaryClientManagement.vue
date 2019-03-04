@@ -3,18 +3,18 @@
     container
     pa-0>
     <v-card>
-      <PrimaryClientForm/>
+      <client-form/>
     </v-card>
   </v-flex>
 </template>
 
 <script>
-    import PrimaryClientForm from './PrimaryClientForm'
-    import {mapState, mapActions} from 'vuex'
+    import ClientForm from './ClientForm'
+    import {mapState} from 'vuex'
 
     export default {
         components: {
-            PrimaryClientForm
+            ClientForm
         },
         computed: {
             ...mapState('clients', ['$record', 'record'])

@@ -4,11 +4,11 @@
     "user": "Mcfadden",
     "no_prenotation": 1218589,
     "place_of_release_document": "Winchester",
-    "document_type": "ID card",
-    "arrival_date": "2016-04-07",
-    "departure_date": "2017-12-05",
+    "reservation_ps_document_type": "ID card",
+    "reservation_ps_arrive_date": "2016-04-07",
+    "reservation_ps_leave_date": "2017-12-05",
     "no_client": 4,
-    "no_room": 4,
+    "reservation_ps_room_n": 4,
     "total_amount": "$12149"
   },
   {
@@ -16,11 +16,11 @@
     "user": "Yates",
     "no_prenotation": 8799561,
     "place_of_release_document": "Santel",
-    "document_type": "ID card",
-    "arrival_date": "2018-10-25",
-    "departure_date": "2016-06-01",
+    "reservation_ps_document_type": "ID card",
+    "reservation_ps_arrive_date": "2018-10-25",
+    "reservation_ps_leave_date": "2016-06-01",
     "no_client": 1,
-    "no_room": 2,
+    "reservation_ps_room_n": 2,
     "total_amount": "$5370"
   },
   {
@@ -28,11 +28,11 @@
     "user": "Blanca",
     "no_prenotation": 8162518,
     "place_of_release_document": "Baker",
-    "document_type": "passport id",
-    "arrival_date": "2018-11-18",
-    "departure_date": "2018-06-28",
+    "reservation_ps_document_type": "passport id",
+    "reservation_ps_arrive_date": "2018-11-18",
+    "reservation_ps_leave_date": "2018-06-28",
     "no_client": 3,
-    "no_room": 2,
+    "reservation_ps_room_n": 2,
     "total_amount": "$21092"
   },
   {
@@ -40,11 +40,11 @@
     "user": "Lorrie",
     "no_prenotation": 709176,
     "place_of_release_document": "Bancroft",
-    "document_type": "ID card",
-    "arrival_date": "2014-05-01",
-    "departure_date": "2015-11-08",
+    "reservation_ps_document_type": "ID card",
+    "reservation_ps_arrive_date": "2014-05-01",
+    "reservation_ps_leave_date": "2015-11-08",
     "no_client": 4,
-    "no_room": 2,
+    "reservation_ps_room_n": 2,
     "total_amount": "$6324"
   },
   {
@@ -52,11 +52,11 @@
     "user": "Burgess",
     "no_prenotation": 6082316,
     "place_of_release_document": "Croom",
-    "document_type": "driving license",
-    "arrival_date": "2015-03-10",
-    "departure_date": "2017-04-28",
+    "reservation_ps_document_type": "driving license",
+    "reservation_ps_arrive_date": "2015-03-10",
+    "reservation_ps_leave_date": "2017-04-28",
     "no_client": 4,
-    "no_room": 3,
+    "reservation_ps_room_n": 3,
     "total_amount": "$16879"
   }
 ]

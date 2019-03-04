@@ -6,7 +6,7 @@
     align-center
   >
     <v-card class="elevation-0">
-      <v-card-title class="headline">{{ $vuetify.t('Gentile') }} {{ $record.user }} </v-card-title>
+      <v-card-title class="headline">{{ $vuetify.t('Gentile') }} {{ item.user }} </v-card-title>
       <v-card-text>
         <span class="my-4"> {{ $vuetify.t('To facilitate you on arrival at our facility') }} <strong>{{ 'Name Hotel' }}</strong>, {{ $vuetify.t('we invite you to') }} </span>
         <br>
