@@ -2,10 +2,6 @@
   <div>
     <v-layout>
       <v-flex
-        v-for="(item, i) in list"
-        :item="item"
-        :index="i"
-        :key="i"
         xs12
         class="my-">
         <v-card
@@ -14,7 +10,7 @@
           <v-card-title primary-title>
             <div class="my-4 mx-4">
               <div class="headline my-4">{{ $vuetify.t('Your Reservation') }}</div>
-              <span> {{ $vuetify.t('Client') }}: <strong>{{ item.user1 }}</strong></span>
+              <span> {{ $vuetify.t('Client') }}: <strong>{{ item.user }}</strong></span>
               <br>
               <span > {{ $vuetify.t('Nr. Prenotation') }}: <strong>{{ item.no_prenotation }}</strong></span>
               <br class="mx-2">

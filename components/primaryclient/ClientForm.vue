@@ -17,7 +17,9 @@
               size="50px"
             >person</v-icon>
           </v-avatar>
+
         </v-flex>
+
         <v-flex
           xs4
           sm3
@@ -274,6 +276,8 @@
 
         </v-flex>
       </v-layout>
+      <v-divider
+        color="black"/>
 
   </v-container></v-layout>
 </template>
