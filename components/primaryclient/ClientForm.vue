@@ -35,247 +35,252 @@
           color="blue">{{ $vuetify.t('Edit') }}</v-btn>
         <v-btn color="blue">{{ $vuetify.t('Save') }}</v-btn>
       </v-layout>
+      <div v-if="item.primary_guest">
+        <v-layout
+          row>
 
-      <v-layout
-        row
-        wrap>
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Tipology') }}</strong>
 
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Tipology') }}</strong>
-          <v-layout mx-3>
-            <span >{{ $vuetify.t('PRIMARY CLIENT') }}</span>
-          </v-layout>
-        </v-flex>
 
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Name') }}</strong>
-          <v-layout mx-1>
-            <v-text-field
-              v-model="item.reservation_ps_name"
-              box
-              hide-details
-            />
-          </v-layout>
-
-        </v-flex>
-
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Surname') }}</strong>
-          <v-layout mx-1>
-            <v-text-field
-              v-model="item.reservation_ps_surname"
-              box
-              hide-details
-            />
-          </v-layout>
-
-        </v-flex>
-
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Sex') }}</strong>
-          <v-layout mx-1>
             <v-combobox
-              v-model="item.reservation_ps_gender"
-              label="Select"
+              v-model="item.guest_type"
               box
               hide-details
             />
-          </v-layout>
+          </v-flex>
 
-        </v-flex>
-      </v-layout>
-      <v-layout
-        row
-        my-3
-      >
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Name') }}</strong>
+            <v-layout mx-1>
+              <v-text-field
+                v-model="item.reservation_ps_name"
+                box
+                hide-details
+              />
+            </v-layout>
 
-        <v-flex
+          </v-flex>
+
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Surname') }}</strong>
+            <v-layout mx-1>
+              <v-text-field
+                v-model="item.reservation_ps_surname"
+                box
+                hide-details
+              />
+            </v-layout>
+
+          </v-flex>
+
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Sex') }}</strong>
+            <v-layout mx-1>
+              <v-combobox
+                v-model="item.reservation_ps_gender"
+                label="Select"
+                box
+                hide-details
+              />
+            </v-layout>
+
+          </v-flex>
+        </v-layout>
+        <v-layout
+          row
+          my-5
+        ><v-flex
           xs12
           sm3>
           <v-layout />
-
         </v-flex>
-
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Date of birth') }}</strong>
-          <v-menu
-            ref="menu2"
-            :close-on-content-click="true"
-            v-model="datePickerFrom"
-            :nudge-right="40"
-            :return-value.sync="date"
-            transition="scale-transition"
-            offset-y
-            full-width
-            min-width="250px"
-          >
-            <v-text-field
-              slot="activator"
-              :label="$vuetify.t('Date')"
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Date of birth') }}</strong>
+            <v-menu
+              ref="menu2"
+              :close-on-content-click="true"
               v-model="datePickerFrom"
-              box
-              readonly
-              append-icon="date_range"
-            />
-            <v-date-picker
-              v-model="item.reservation_ps_birthdate"
-              locale="ita" />
-          </v-menu>
+              :nudge-right="40"
+              :return-value.sync="date"
+              transition="scale-transition"
+              offset-y
+              full-width
+              min-width="250px"
+            >
+              <v-text-field
+                slot="activator"
+                :label="$vuetify.t('Date')"
+                v-model="item.reservation_ps_birthdate"
+                box
+                readonly
+                append-icon="date_range"
+              />
+              <v-date-picker
+                v-model="fltDateFrom"
+                locale="ita" />
+            </v-menu>
 
-        </v-flex>
+          </v-flex>
 
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Place of Birth') }}</strong>
-          <v-layout mx-1>
-            <v-combobox
-              v-model="item.reservation_ps_birthplace"
-              label="Select"
-              hide-details
-              box
-            />
-          </v-layout>
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Place of Birth') }}</strong>
+            <v-layout mx-1>
+              <v-combobox
+                v-model="item.reservation_ps_birthplace"
+                label="Select"
+                hide-details
+                box
+              />
+            </v-layout>
 
-        </v-flex>
+          </v-flex>
 
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Country of Birth') }}</strong>
-          <v-layout mx-1>
-            <v-combobox
-              v-model="item.reservation_ps_birthplace"
-              label="Select"
-              box
-              hide-details
-            />
-          </v-layout>
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Country of Birth') }}</strong>
+            <v-layout mx-1>
+              <v-combobox
+                v-model="item.reservation_ps_birthplace"
+                label="Select"
+                box
+                hide-details
+              />
+            </v-layout>
 
-        </v-flex>
-      </v-layout>
-      <v-layout
-        row
-        my-3
-      >
+          </v-flex>
+        </v-layout>
 
-        <v-flex
-          xs12
-          sm3>
-          <v-layout />
+        <v-layout
+          row
+          my-0>
+          <v-flex
+            xs12
+            sm3>
+            <v-layout />
 
-        </v-flex>
+          </v-flex>
 
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Resident') }}</strong>
-          <v-layout mx-1>
-            <v-text-field
-              v-model="item.reservation_ps_cittadinanza"
-              box
-              hide-details
-            />
-          </v-layout>
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Resident') }}</strong>
+            <v-layout>
+              <v-text-field
+                v-model="item.reservation_ps_cittadinanza"
+                box
+                hide-details
+              />
+            </v-layout>
 
-        </v-flex>
+          </v-flex>
 
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Resident Country') }}</strong>
-          <v-layout mx-1>
-            <v-combobox
-              v-model="item.reservation_ps_country"
-              label="Select"
-              box
-              hide-details
-            />
-          </v-layout>
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Resident Country') }}</strong>
+            <v-layout mx-1>
+              <v-combobox
+                v-model="item.reservation_ps_country"
+                label="Select"
+                box
+                hide-details
+              />
+            </v-layout>
 
-        </v-flex>
+          </v-flex>
 
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('City Of Resident') }}</strong>
-          <v-layout mx-1>
-            <v-combobox
-              v-model="item.reservation_ps_state"
-              label="Select"
-              box
-              hide-details
-            />
-          </v-layout>
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('City Of Resident') }}</strong>
+            <v-layout mx-1>
+              <v-combobox
+                v-model="item.reservation_ps_state"
+                label="Select"
+                box
+                hide-details
+              />
+            </v-layout>
 
-        </v-flex>
-      </v-layout>
-      <v-layout
-        row
-        my-3
-      >
+          </v-flex>
+        </v-layout>
+      </div>
+      <div v-else>
+        <v-layout
+          row
+          my-5>
+          <v-flex
+            xs12
+            sm3>
+            <v-layout />
 
-        <v-flex
-          xs12
-          sm3>
-          <v-layout />
+          </v-flex>
 
-        </v-flex>
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Type of Document') }}</strong>
+            <v-layout mx-1>
+              <v-combobox
+                v-model="item.reservation_ps_document_type"
+                label="Select"
+                dense
+                box
+                hide-details
+              />
+            </v-layout>
 
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Type of Document') }}</strong>
-          <v-layout mx-1>
-            <v-combobox
-              v-model="item.reservation_ps_document_type"
-              label="Select"
-              box
-              hide-details
-            />
-          </v-layout>
+          </v-flex>
 
-        </v-flex>
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Document Number') }}</strong>
+            <v-layout mx-1>
+              <v-text-field
+                v-model="item.reservation_ps_doc_type_code"
+                dense
+                box
+                hide-details
+              />
+            </v-layout>
 
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Document Number') }}</strong>
-          <v-layout mx-1>
-            <v-text-field
-              v-model="item.reservation_ps_doc_type_code"
-              box
-              hide-details
-            />
-          </v-layout>
+          </v-flex>
 
-        </v-flex>
+          <v-flex
+            xs12
+            sm3>
+            <strong >{{ $vuetify.t('Place Of Release') }}</strong>
+            <v-layout mx-1>
+              <v-autocomplete
+                v-model="item.reservation_ps_birthcounty"
+                :items="clients"
+                label="Select"
+                item-value="reservation_ps_id"
+                item-text="reservation_ps_birthcounty"
+                box
+                dense
+                hide-details
+              />
+            </v-layout>
 
-        <v-flex
-          xs12
-          sm3>
-          <strong >{{ $vuetify.t('Place Of Release') }}</strong>
-          <v-layout mx-1>
-            <v-combobox
-              v-model="item.reservation_ps_birthcounty"
-              label="Select"
-              box
-              hide-details
-            />
-          </v-layout>
-
-        </v-flex>
-      </v-layout>
+          </v-flex>
+        </v-layout>
+      </div>
       <v-divider
         color="black"/>
 
@@ -283,9 +288,10 @@
 </template>
 
 <script>
-    import {mapGetters} from 'vuex'
+    import {mapState, mapGetters} from 'vuex'
     export default {
         name: "PrimaryClientForm",
+
         props: {
             item: {type: Object, default: () => {}},
             index: {type: Number, default: 0}
@@ -298,6 +304,7 @@
             }
         },
         computed: {
+            ...mapState('clients', ['list']),
             ...mapGetters('clients', ['isAddMode', 'isEditMode', 'isView'])
 
         },

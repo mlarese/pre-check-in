@@ -1,6 +1,7 @@
 [
   {
     "reservation_ps_id": 0,
+    "guest_type": "Primary Guest",
     "reservation_ps_gender": "male",
     "reservation_ps_name": "Carolina",
     "reservation_ps_surname": "Carrillo",
@@ -16,6 +17,7 @@
   },
   {
     "reservation_ps_id": 10,
+    "guest_type": "Guest",
     "reservation_ps_gender": "female",
     "reservation_ps_name": "Tameka",
     "reservation_ps_surname": "Cortez",
@@ -31,6 +33,7 @@
   },
   {
     "reservation_ps_id": 20,
+    "guest_type": "Guest",
     "reservation_ps_gender": "female",
     "reservation_ps_name": "Morgan",
     "reservation_ps_surname": "Fuentes",
@@ -43,35 +46,5 @@
     "reservation_ps_country": "Taiwan",
     "reservation_ps_state": "Hartsville/Hartley",
     "reservation_ps_birthcounty": "Bahamas"
-  },
-  {
-    "reservation_ps_id": 30,
-    "reservation_ps_gender": "male",
-    "reservation_ps_name": "Liza",
-    "reservation_ps_surname": "Trujillo",
-    "reservation_ps_doc_type_code": 3927841,
-    "place_of_release_document": "Rivera",
-    "reservation_ps_document_type": "driving license",
-    "reservation_ps_birthdate": "2017-09-05",
-    "reservation_ps_birthplace": "West Virginia",
-    "reservation_ps_cittadinanza": "Aruba",
-    "reservation_ps_country": "Puerto Rico",
-    "reservation_ps_state": "Urbana",
-    "reservation_ps_birthcounty": "Myanmar"
-  },
-  {
-    "reservation_ps_id": 40,
-    "reservation_ps_gender": "female",
-    "reservation_ps_name": "Trisha",
-    "reservation_ps_surname": "Hardy",
-    "reservation_ps_doc_type_code": 2814127,
-    "place_of_release_document": "Hillsboro",
-    "reservation_ps_document_type": "passport reservation_ps_id",
-    "reservation_ps_birthdate": "2014-10-20",
-    "reservation_ps_birthplace": "Puerto Rico",
-    "reservation_ps_cittadinanza": "Benin",
-    "reservation_ps_country": "French Southern Territories",
-    "reservation_ps_state": "Kylertown",
-    "reservation_ps_birthcounty": "Mongolia"
   }
 ]

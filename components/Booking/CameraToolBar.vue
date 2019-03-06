@@ -1,34 +1,37 @@
 <template>
-  <v-layout color="blue">
-    <v-flex
-      xs4
-      sm2
-      md1
-    >
-      <v-avatar
-        slot="activator"
-        size="60px"
+  <div>
+    <v-layout>
+      <v-flex
+        xs3
+        sm1
+        md1
       >
-        <v-icon
-          color="grey"
-          icon="people"
-          size="50px"
-        >hotel</v-icon>
-      </v-avatar>
+        <v-avatar
+          slot="activator"
+          size="60px"
+          class="align-baseline"
+        >
+          <v-icon
+            color="blue"
+            size="50px"
+          >hotel</v-icon>
+        </v-avatar>
 
-    </v-flex>
+      </v-flex>
 
-    <v-flex
-      xs4
-      sm3
-      md2
-      my-4
-    >
-      <strong class="title">{{ $vuetify.t('Camera') }} 1  </strong> <em><small>{{ $vuetify.t('of') }} 2</small></em>
-    </v-flex>
+      <v-flex
+        xs4
+        sm3
+        md2
+        class="my-4 mx-2"
+
+      >
+        <v-layout color="blue"><strong class="title">{{ $vuetify.t('Camera') }} 1  </strong> <em><small>{{ $vuetify.t('of') }} 2</small></em></v-layout>
+      </v-flex>
+
+    </v-layout>
     <v-divider color="blue"/>
-  </v-layout>
-
+  </div>
 </template>
 
 <script>
