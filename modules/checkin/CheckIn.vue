@@ -1,9 +1,6 @@
 <template>
   <div>
     <v-layout
-      v-for="(guest, i) in list"
-      :item="guest"
-      :key="i"
       column
       justify-center
       align-center
@@ -60,18 +57,10 @@
   </div>
 </template>
 <script>
-  import {mapState} from 'vuex'
-  const root = {root: true}
   export default {
       props: {
           item: {type: Object, default: () => {}},
           index: {type: Number, default: 0}
-      },
-      computed: {
-          ...mapState('booking', ['list']),
-      },
-      fetch({store}) {
-          store.dispatch('booking/load', {}, root)
       }
 
   }
