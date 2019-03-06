@@ -31,7 +31,7 @@
 
         <v-spacer/>
         <v-btn
-          :disabled="!addMode"
+          :disabled="isAddMode"
           color="blue">{{ $vuetify.t('Edit') }}</v-btn>
         <v-btn color="blue">{{ $vuetify.t('Save') }}</v-btn>
       </v-layout>
@@ -122,13 +122,13 @@
             <v-text-field
               slot="activator"
               :label="$vuetify.t('Date')"
-              v-model="item.reservation_ps_birthdate"
+              v-model="datePickerFrom"
               box
               readonly
               append-icon="date_range"
             />
             <v-date-picker
-              v-model="fltDateFrom"
+              v-model="item.reservation_ps_birthdate"
               locale="ita" />
           </v-menu>
 

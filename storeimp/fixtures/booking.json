@@ -10,53 +10,5 @@
     "no_client": 4,
     "reservation_ps_room_n": 4,
     "total_amount": "$12149"
-  },
-  {
-    "id": 12,
-    "user": "Yates",
-    "no_prenotation": 8799561,
-    "place_of_release_document": "Santel",
-    "reservation_ps_document_type": "ID card",
-    "reservation_ps_arrive_date": "2018-10-25",
-    "reservation_ps_leave_date": "2016-06-01",
-    "no_client": 1,
-    "reservation_ps_room_n": 2,
-    "total_amount": "$5370"
-  },
-  {
-    "id": 22,
-    "user": "Blanca",
-    "no_prenotation": 8162518,
-    "place_of_release_document": "Baker",
-    "reservation_ps_document_type": "passport id",
-    "reservation_ps_arrive_date": "2018-11-18",
-    "reservation_ps_leave_date": "2018-06-28",
-    "no_client": 3,
-    "reservation_ps_room_n": 2,
-    "total_amount": "$21092"
-  },
-  {
-    "id": 32,
-    "user": "Lorrie",
-    "no_prenotation": 709176,
-    "place_of_release_document": "Bancroft",
-    "reservation_ps_document_type": "ID card",
-    "reservation_ps_arrive_date": "2014-05-01",
-    "reservation_ps_leave_date": "2015-11-08",
-    "no_client": 4,
-    "reservation_ps_room_n": 2,
-    "total_amount": "$6324"
-  },
-  {
-    "id": 42,
-    "user": "Burgess",
-    "no_prenotation": 6082316,
-    "place_of_release_document": "Croom",
-    "reservation_ps_document_type": "driving license",
-    "reservation_ps_arrive_date": "2015-03-10",
-    "reservation_ps_leave_date": "2017-04-28",
-    "no_client": 4,
-    "reservation_ps_room_n": 3,
-    "total_amount": "$16879"
   }
 ]
