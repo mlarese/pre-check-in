@@ -1,7 +1,7 @@
 [
   {
     "reservation_ps_id": 0,
-    "reservation_ps_guest_type": "Primary Guest",
+    "reservation_ps_guest_type": 16,
     "reservation_ps_gender": "male",
     "reservation_ps_name": "Carolina",
     "reservation_ps_surname": "Carrillo",
@@ -17,7 +17,7 @@
   },
   {
     "reservation_ps_id": 10,
-    "reservation_ps_guest_type": "Guest",
+    "reservation_ps_guest_type": 19,
     "reservation_ps_gender": "female",
     "reservation_ps_name": "Tameka",
     "reservation_ps_surname": "Cortez",
@@ -33,7 +33,7 @@
   },
   {
     "reservation_ps_id": 20,
-    "reservation_ps_guest_type": "Guest",
+    "reservation_ps_guest_type": 19,
     "reservation_ps_gender": "female",
     "reservation_ps_name": "Morgan",
     "reservation_ps_surname": "Fuentes",
