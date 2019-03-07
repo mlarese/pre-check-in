@@ -9,10 +9,18 @@ export const state = () => {
         $record: {},
         addRecord: {},
         resetItem: {},
+        filterActive: false,
         form: {valid: false, dirty: false},
         mountingForm: false,
         grid: {pagination: {}},
         mode: 'add',
+        select: [
+            {value: 16, name:'OSPITE SINGOLO'},
+            {value: 17, name:'CAPOFAMIGLIA'},
+            {value: 18, name:'CAPOGRUPPO'},
+            {value: 19, name:'FAMILIARE'},
+            {value: 20, name:'MEMBRO GRUPPO'}
+        ]
     }
 }
 
