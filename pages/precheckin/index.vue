@@ -7,6 +7,13 @@
       :index="i"
       :key="i"
     />
+    <v-card-actions>
+      <v-spacer/>
+      <v-btn
+        color="warning"
+        dark>
+        {{ $vuetify.t('Send Your Data') }}</v-btn>
+    </v-card-actions>
   </div>
 </template>
 

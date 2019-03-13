@@ -1,48 +1,33 @@
 <template class="primary-client-form">
-  <v-layout row>
-    <v-container>
-      <v-layout>
-        <v-flex
-          xs4
-          sm2
-          md1
+  <div>
+    <v-card class="elevation-0">
+      <v-card-title >
+        <v-icon
+          dark
+          color="grey"
+          size="42"
+          class="mr-3 "
+
         >
-          <v-avatar
-            slot="activator"
-            size="60px"
-          >
-            <v-icon
-              color="grey"
-              icon="people"
-              size="50px"
-            >person</v-icon>
-          </v-avatar>
-
-        </v-flex>
-
-        <v-flex
-          xs4
-          sm3
-          md2
-          my-4
-        >
-          <strong class="title">{{ $vuetify.t('Clients') }} 1  </strong> <em><small>{{ $vuetify.t('of') }} 3</small></em>
-        </v-flex>
-
+          person
+        </v-icon>
+        <h2>{{ $vuetify.t('Clients') }} 1  <em><small>{{ $vuetify.t('of') }} 3</small></em></h2>
         <v-spacer/>
         <v-btn
           :disabled="isAddMode"
           color="blue">{{ $vuetify.t('Edit') }}</v-btn>
         <v-btn color="blue">{{ $vuetify.t('Save') }}</v-btn>
-      </v-layout>
+      </v-card-title>
+
 
       <v-layout
-        row>
+        row
+        wrap>
 
         <v-flex
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Tipology') }}</strong>
+          <h3 >{{ $vuetify.t('Tipology') }}</h3>
 
 
           <v-combobox
@@ -54,13 +39,13 @@
             hide-details
           />
         </v-flex>
-
+        <v-spacer/>
         <v-flex
-          v-if="isPrimaryGuest"
+
           xs12
           sm3
         >
-          <strong >{{ $vuetify.t('Name') }}</strong>
+          <h3 >{{ $vuetify.t('Name') }}</h3>
           <v-layout mx-1>
             <v-text-field
               v-model="item.reservation_ps_name"
@@ -72,10 +57,10 @@
         </v-flex>
 
         <v-flex
-          v-if="isPrimaryGuest"
+
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Surname') }}</strong>
+          <h3 >{{ $vuetify.t('Surname') }}</h3>
           <v-layout mx-1>
             <v-text-field
               v-model="item.reservation_ps_surname"
@@ -87,10 +72,10 @@
         </v-flex>
 
         <v-flex
-          v-if="isPrimaryGuest"
+
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Sex') }}</strong>
+          <h3 >{{ $vuetify.t('Sex') }}</h3>
           <v-layout mx-1>
             <v-combobox
               v-model="item.reservation_ps_gender"
@@ -106,16 +91,16 @@
         row
         my-5
       ><v-flex
-        v-if="isPrimaryGuest"
+
         xs12
         sm3>
         <v-layout />
       </v-flex>
         <v-flex
-          v-if="isPrimaryGuest"
+
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Date of birth') }}</strong>
+          <h3 >{{ $vuetify.t('Date of birth') }}</h3>
           <v-menu
             :close-on-content-click="true"
             v-model="datePickerFrom"
@@ -143,10 +128,10 @@
         </v-flex>
 
         <v-flex
-          v-if="isPrimaryGuest"
+
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Place of Birth') }}</strong>
+          <h3 >{{ $vuetify.t('Place of Birth') }}</h3>
           <v-layout mx-1>
             <v-combobox
               v-model="item.reservation_ps_birthplace"
@@ -159,10 +144,10 @@
         </v-flex>
 
         <v-flex
-          v-if="isPrimaryGuest"
+
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Country of Birth') }}</strong>
+          <h3 >{{ $vuetify.t('Country of Birth') }}</h3>
           <v-layout mx-1>
             <v-combobox
               v-model="item.reservation_ps_birthplace"
@@ -178,7 +163,7 @@
         row
         my-0>
         <v-flex
-          v-if="isPrimaryGuest"
+
           xs12
           sm3>
           <v-layout />
@@ -186,10 +171,10 @@
         </v-flex>
 
         <v-flex
-          v-if="isPrimaryGuest"
+
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Resident') }}</strong>
+          <h3 >{{ $vuetify.t('Resident') }}</h3 >
           <v-layout>
             <v-text-field
               v-model="item.reservation_ps_cittadinanza"
@@ -201,10 +186,9 @@
         </v-flex>
 
         <v-flex
-          v-if="isPrimaryGuest"
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Resident Country') }}</strong>
+          <h3 >{{ $vuetify.t('Resident Country') }}</h3>
           <v-layout mx-1>
             <v-combobox
               v-model="item.reservation_ps_country"
@@ -220,7 +204,7 @@
           v-if="isPrimaryGuest"
           xs12
           sm3>
-          <strong >{{ $vuetify.t('City Of Resident') }}</strong>
+          <h3 >{{ $vuetify.t('City Of Resident') }}</h3>
           <v-layout mx-1>
             <v-combobox
               v-model="item.reservation_ps_state"
@@ -236,6 +220,7 @@
         row
         my-5>
         <v-flex
+
           v-if="isPrimaryGuest"
           xs12
           sm3>
@@ -244,10 +229,11 @@
         </v-flex>
 
         <v-flex
+
           v-if="isPrimaryGuest"
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Type of Document') }}</strong>
+          <h3 >{{ $vuetify.t('Type of Document') }}</h3>
           <v-layout mx-1>
             <v-combobox
               v-model="item.reservation_ps_document_type"
@@ -264,7 +250,7 @@
           v-if="isPrimaryGuest"
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Document Number') }}</strong>
+          <h3 >{{ $vuetify.t('Document Number') }}</h3>
           <v-layout mx-1>
             <v-text-field
               v-model="item.reservation_ps_doc_type_code"
@@ -277,10 +263,11 @@
         </v-flex>
 
         <v-flex
+
           v-if="isPrimaryGuest"
           xs12
           sm3>
-          <strong >{{ $vuetify.t('Place Of Release') }}</strong>
+          <h3 >{{ $vuetify.t('Place Of Release') }}</h3>
           <v-layout mx-1>
             <v-autocomplete
               v-model="item.reservation_ps_birthcounty"
@@ -294,8 +281,8 @@
       </v-layout>
       <v-divider
         color="black"/>
-
-  </v-container></v-layout>
+    </v-card>
+  </div>
 </template>
 
 <script>
