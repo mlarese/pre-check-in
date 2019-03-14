@@ -41,7 +41,7 @@
         </v-flex>
         <v-spacer/>
         <v-flex
-
+          v-if="isPrimaryGuest"
           xs12
           sm3
         >
@@ -57,7 +57,7 @@
         </v-flex>
 
         <v-flex
-
+          v-if="isPrimaryGuest"
           xs12
           sm3>
           <h3 >{{ $vuetify.t('Surname') }}</h3>
@@ -72,7 +72,7 @@
         </v-flex>
 
         <v-flex
-
+          v-if="isPrimaryGuest"
           xs12
           sm3>
           <h3 >{{ $vuetify.t('Sex') }}</h3>
@@ -88,6 +88,7 @@
         </v-flex>
       </v-layout>
       <v-layout
+        v-if="isPrimaryGuest"
         row
         my-5
       ><v-flex
@@ -163,7 +164,6 @@
         row
         my-0>
         <v-flex
-
           xs12
           sm3>
           <v-layout />
@@ -171,7 +171,7 @@
         </v-flex>
 
         <v-flex
-
+          v-if="isPrimaryGuest"
           xs12
           sm3>
           <h3 >{{ $vuetify.t('Resident') }}</h3 >
@@ -186,6 +186,7 @@
         </v-flex>
 
         <v-flex
+          v-if="isPrimaryGuest"
           xs12
           sm3>
           <h3 >{{ $vuetify.t('Resident Country') }}</h3>
@@ -200,8 +201,12 @@
 
         </v-flex>
 
+
+
+
+
         <v-flex
-          v-if="isPrimaryGuest"
+          v-else
           xs12
           sm3>
           <h3 >{{ $vuetify.t('City Of Resident') }}</h3>
@@ -217,11 +222,10 @@
         </v-flex>
       </v-layout>
       <v-layout
+        v-if="!isPrimaryGuest"
         row
         my-5>
         <v-flex
-
-          v-if="isPrimaryGuest"
           xs12
           sm3>
           <v-layout />
@@ -229,8 +233,6 @@
         </v-flex>
 
         <v-flex
-
-          v-if="isPrimaryGuest"
           xs12
           sm3>
           <h3 >{{ $vuetify.t('Type of Document') }}</h3>
@@ -247,7 +249,6 @@
         </v-flex>
 
         <v-flex
-          v-if="isPrimaryGuest"
           xs12
           sm3>
           <h3 >{{ $vuetify.t('Document Number') }}</h3>
@@ -263,8 +264,6 @@
         </v-flex>
 
         <v-flex
-
-          v-if="isPrimaryGuest"
           xs12
           sm3>
           <h3 >{{ $vuetify.t('Place Of Release') }}</h3>
