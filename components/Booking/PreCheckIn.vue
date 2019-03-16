@@ -63,7 +63,6 @@
 </template>
 
 <script>
-    import MyBooking from './MyBooking'
     export default {
         name: "PreChechIn",
         components: {},
