@@ -302,7 +302,7 @@
         },
         computed: {
             isPrimaryGuest () {
-                return this.reservation_guest_type === 16 || this.reservation_guest_type === 17 || this.reservation_guest_type === 18},
+                return this.reservation_ps_guest_type === 16 || this.reservation_ps_guest_type === 17 || this.reservation_ps_guest_type === 18},
             ...mapState('clients', ['list', 'select','filterActive']),
             ...mapGetters('clients', ['isAddMode', 'isEditMode', 'isView'])
 
