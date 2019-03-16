@@ -29,8 +29,7 @@
           sm3>
           <h3 >{{ $vuetify.t('Tipology') }}</h3>
 
-
-          <v-combobox
+          <v-select
             v-model="item.reservation_ps_guest_type"
             :items="select"
             item-value="value"
@@ -302,7 +301,7 @@
         },
         computed: {
             isPrimaryGuest () {
-                return this.reservation_ps_guest_type === 16 || this.reservation_ps_guest_type === 17 || this.reservation_ps_guest_type === 18},
+                return this.item.reservation_ps_guest_type === 16 || this.item.reservation_ps_guest_type === 17 || this.item.reservation_ps_guest_type === 18},
             ...mapState('clients', ['list', 'select','filterActive']),
             ...mapGetters('clients', ['isAddMode', 'isEditMode', 'isView'])
 
