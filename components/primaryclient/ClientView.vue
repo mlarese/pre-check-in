@@ -178,13 +178,18 @@
 <script>
     import {mapState, mapMutations} from 'vuex'
     export default {
+        props: {
+            item: {type: Object, default: () => {}},
+            index: {type: Number, default: 0}
+        },
 
         computed: {
             ...mapState('clients', ['$record', 'record'])
         },
         methods: {
             ...mapMutations('clients', ['setEditMode'])
-        }
+        },
+
 
 
     }
