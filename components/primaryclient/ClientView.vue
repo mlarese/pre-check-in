@@ -1,37 +1,6 @@
 <template class="primary-client-view">
   <v-layout row>
     <v-container>
-      <v-layout>
-        <v-flex
-          xs4
-          sm2
-          md1>
-          <v-avatar
-            slot="activator"
-            size="60px"
-          >
-            <v-icon
-              color="red"
-              icon="people"
-              size="50px"
-            >person</v-icon>
-          </v-avatar>
-        </v-flex>
-        <v-flex
-          xs4
-          sm3
-          md2
-          my-4
-        >
-          <strong class="title">{{ $vuetify.t('Clients') }} 1  </strong> {{ $vuetify.t('of') }} 3
-        </v-flex>
-
-        <v-spacer/>
-        <v-btn
-          color="info"
-          @click="isEditMode">{{ $vuetify.t('Edit') }}</v-btn>
-        <v-btn color="info">{{ $vuetify.t('Save') }}</v-btn>
-      </v-layout>
 
       <v-layout
         row
@@ -207,14 +176,16 @@
 </template>
 
 <script>
-    import {mapState, mapGetters} from 'vuex'
+    import {mapState, mapMutations} from 'vuex'
     export default {
+
         computed: {
-            ...mapState('clients', ['item', 'record'])
+            ...mapState('clients', ['$record', 'record'])
         },
         methods: {
-            ...mapGetters('clients', ['isEditMode'])
-        },
+            ...mapMutations('clients', ['setEditMode'])
+        }
+
 
     }
 </script>

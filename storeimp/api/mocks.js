@@ -11,6 +11,10 @@ mock
   .onGet('/principal').reply(() => [200, user])
   .onGet('/booking').reply(() => [200, booking])
   .onGet('/clients').reply(() => [200, clients])
+  .onPut('/clients/0').reply(() => [200, 0])
+  .onPut('/clients/10').reply(() => [200, 10])
+  .onPut('/clients/20').reply(() => [200, 20])
+  .onPost('/clients').reply(() => [200, clients])
 
   .onGet('/testerror500').reply(500)
   .onGet('/testerror403').reply(403)

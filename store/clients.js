@@ -71,7 +71,7 @@ export const actions = {
                 commit('setAddMode')
             })
     },
-    selectItem({commit}, item) {
+    edit({commit}, item) {
         commit('set$Record', item)
         commit('setEditMode')
 
@@ -87,7 +87,7 @@ export const actions = {
             return dispatch('insert', {data})
                 .then(r => {
                     commit('addRecord', data)
-                    commit('set$Record', {})
+                    commit('setViewMode', {})
                 })
         } else {
             let id = data.code

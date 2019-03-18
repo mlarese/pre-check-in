@@ -10,16 +10,19 @@
 
 <script>
     import ClientForm from './ClientForm'
-    import {mapState} from 'vuex'
+    import {mapState, mapActions} from 'vuex'
 
     export default {
         components: {
             ClientForm
         },
+
         computed: {
             ...mapState('clients', ['$record', 'record'])
+        },
+        methods: {
+            ...mapActions('clients', ['save']),
         }
-
     }
 </script>
 

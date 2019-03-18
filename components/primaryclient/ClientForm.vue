@@ -15,14 +15,21 @@
         <v-spacer/>
         <v-btn
           :disabled="isAddMode"
-          color="blue">{{ $vuetify.t('Edit') }}</v-btn>
-        <v-btn color="blue">{{ $vuetify.t('Save') }}</v-btn>
+          color="info"
+          @click="edit(item)">{{ $vuetify.t('Edit') }}</v-btn>
+        <v-btn
+          :disabled="isViewMode"
+          color="info"
+          @click="save(item)">{{ $vuetify.t('Save') }}</v-btn>
       </v-card-title>
 
+      <ClientView
+        v-if="isViewMode"/>
 
       <v-layout
         row
-        wrap>
+        wrap
+      >
 
         <v-flex
           xs12
@@ -160,6 +167,7 @@
         </v-flex>
       </v-layout>
       <v-layout
+        v-if="isPrimaryGuest"
         row
         my-0>
         <v-flex
@@ -170,7 +178,6 @@
         </v-flex>
 
         <v-flex
-          v-if="isPrimaryGuest"
           xs12
           sm3>
           <h3 >{{ $vuetify.t('Resident') }}</h3 >
@@ -185,7 +192,6 @@
         </v-flex>
 
         <v-flex
-          v-if="isPrimaryGuest"
           xs12
           sm3>
           <h3 >{{ $vuetify.t('Resident Country') }}</h3>
@@ -205,7 +211,6 @@
 
 
         <v-flex
-          v-else
           xs12
           sm3>
           <h3 >{{ $vuetify.t('City Of Resident') }}</h3>
@@ -221,7 +226,7 @@
         </v-flex>
       </v-layout>
       <v-layout
-        v-if="!isPrimaryGuest"
+        v-if="isPrimaryGuest"
         row
         my-5>
         <v-flex
@@ -284,9 +289,11 @@
 </template>
 
 <script>
-    import {mapState, mapGetters} from 'vuex'
+    import {mapState, mapGetters, mapActions} from 'vuex'
+    import ClientView from './ClientView'
     export default {
         name: "PrimaryClientForm",
+        components: {ClientView},
 
         props: {
             item: {type: Object, default: () => {}},
@@ -303,9 +310,12 @@
             isPrimaryGuest () {
                 return this.item.reservation_ps_guest_type === 16 || this.item.reservation_ps_guest_type === 17 || this.item.reservation_ps_guest_type === 18},
             ...mapState('clients', ['list', 'select','filterActive']),
-            ...mapGetters('clients', ['isAddMode', 'isEditMode', 'isView'])
+            ...mapGetters('clients', ['isAddMode', 'isEditMode', 'isViewMode'])
 
-        }
+        },
+        methods: {
+            ...mapActions('clients', ['cancel', 'save', 'edit'])
+        },
 
 
 
