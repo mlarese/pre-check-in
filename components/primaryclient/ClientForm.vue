@@ -1,5 +1,66 @@
 <template class="primary-client-form">
   <div>
+    <v-layout>
+      <v-flex
+        xs5
+        sm5
+        md5>
+        <v-avatar
+          slot="activator"
+          size="100px"
+          class="my-4"
+        >
+          <img
+
+            src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
+            alt="Avatar"
+          >
+        </v-avatar>
+        <v-layout
+          class="title"
+        > {{ $vuetify.t(' Welcome to Pre-Check-In' ) }}
+        </v-layout>
+        <br>
+        <span>{{ $vuetify.t ('You can fill in the data related to the Guests from the comfort of your home,') }}</span>
+        <br>
+        <span>{{ $vuetify.t ('facilitating and simplifying your arrival at our facility.') }}</span>
+        <br>
+        <strong>{{ $vuetify.t ('fill in all the fields below.') }}</strong>
+      </v-flex>
+      <v-spacer/>
+      <v-flex
+        xs3
+        sm3
+        md3>
+        <v-flex
+          xs12
+          class="my-">
+          <v-card
+            color="grey lighten-3"
+            class="black--text elevation-0">
+            <v-card-title primary-title>
+              <div class="my-4 mx-4">
+                <div class="headline my-4">{{ $vuetify.t('Your Reservation') }}</div>
+                <span> {{ $vuetify.t('Client') }}: <strong>{{ item.user }}</strong></span>
+                <br>
+                <span > {{ $vuetify.t('Nr. Prenotation') }}: <strong>{{ item.no_prenotation }}</strong></span>
+                <br class="mx-2">
+                <span> {{ $vuetify.t('Arrival Date') }}: <strong>{{ item.reservation_ps_arrive_date }}</strong></span>
+                <br>
+                <span> {{ $vuetify.t('Departure Date') }}: <strong>{{ item.reservation_ps_leave_date }}</strong></span>
+                <br>
+                <span> {{ $vuetify.t('Nr. Visitor') }}: <strong>{{ item.no_client }}</strong></span>
+                <br>
+                <span> {{ $vuetify.t('Nr. Room') }}: <strong>{{ item.reservation_ps_room_n }}</strong></span>
+                <br>
+                <span> {{ $vuetify.t('Total Amount') }}: <strong>{{ item.total_amount }}</strong></span>
+              </div>
+            </v-card-title>
+          </v-card>
+        </v-flex>
+      </v-flex>
+
+    </v-layout>
     <v-card class="elevation-0">
       <v-card-title >
         <v-icon
@@ -23,9 +84,180 @@
           @click="save(item)">{{ $vuetify.t('Save') }}</v-btn>
       </v-card-title>
 
-      <ClientView
-        v-if="isViewMode"/>
+      <v-layout v-if="isViewMode">
+        <v-container>
 
+          <v-layout
+            row
+            wrap>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Tipology') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_guest_type }}</span>
+              </v-layout>
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Name') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_name }}</span>
+              </v-layout>
+
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Surname') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_surname }}</span>
+              </v-layout>
+
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Sex') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_gender }}</span>
+              </v-layout>
+
+            </v-flex>
+          </v-layout>
+          <v-layout
+            row
+            my-3
+          >
+
+            <v-flex
+              xs12
+              sm3>
+              <v-layout mx-2/>
+
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Date of birth') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_birthdate }}</span>
+              </v-layout>
+
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Place of Birth') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_birthplace }}</span>
+              </v-layout>
+
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Country of Birth') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_birthcounty }}</span>
+              </v-layout>
+
+            </v-flex>
+          </v-layout>
+          <v-layout
+            row
+            my-3
+          >
+
+            <v-flex
+              xs12
+              sm3>
+              <v-layout mx-2/>
+
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Residence') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_cittadinanza }}</span>
+              </v-layout>
+
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Resident Country') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_country }}</span>
+              </v-layout>
+
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('City Of Resident') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_state }}</span>
+              </v-layout>
+
+            </v-flex>
+          </v-layout>
+          <v-layout
+            row
+            my-3
+          >
+
+            <v-flex
+              xs12
+              sm3>
+              <v-layout mx-2/>
+
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Type of Document') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_document_type }}</span>
+              </v-layout>
+
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Document Number') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.reservation_ps_doc_type_code }}</span>
+              </v-layout>
+
+            </v-flex>
+
+            <v-flex
+              xs12
+              sm3>
+              <strong >{{ $vuetify.t('Place Of Release') }}</strong>
+              <v-layout mx-2>
+                <span >{{ item.place_of_release_document }}</span>
+              </v-layout>
+
+            </v-flex>
+          </v-layout>
+
+      </v-container></v-layout>
       <v-layout
         row
         wrap

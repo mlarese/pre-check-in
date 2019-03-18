@@ -1,7 +1,5 @@
 <template>
   <div>
-    <pre-check-in/>
-    <camera-tool-bar/>
     <client-form
       v-for="(guest, i) in list"
       :item="guest"
