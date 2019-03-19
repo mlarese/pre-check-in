@@ -57,7 +57,7 @@ export const mutations = {
     setFormValid (s, p) { s.form.valid = p },
     setFormDirty (s, p) { s.form.dirty = p },
     setEditMode (s) { s.mode = 'edit' },
-    setViewMode (s) { s.mode = 'view' },
+    setViewMode (s,{item, active}) { item.isViewMode = active },
     setAddMode (state) { state.mode = 'add' }
 
 }
@@ -81,20 +81,11 @@ export const actions = {
         commit('reset$Record')
         commit('setAddMode')
     },
-    save ({dispatch, commit, state, getters}) {
-        let data = state.$record
-        if (getters.isAddMode) {
-            return dispatch('insert', {data})
+    save ({dispatch, commit, state, getters}, item) {
+            return dispatch('update', item)
                 .then(r => {
-                    commit('addRecord', data)
-                    commit('setViewMode', {})
+                    commit('setViewMode', {item, active:true})
                 })
-        } else {
-            let id = data.code
-            return dispatch('update', {data, id})
-                .then(() => commit('set$Record', {}))
-                .then(() => commit('setAddMode'))
-        }
     },
     insert ({dispatch, commit}, {data}) {
         const url = `/clients`
