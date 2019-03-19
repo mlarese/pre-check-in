@@ -63,6 +63,7 @@ export const mutations = {
 }
 export const actions = {
     update ({dispatch, commit, state}, {data, id}) {
+        console.log(id)
         const url = `/clients/${id}`
         return dispatch('api/put', {url, data}, root)
             .then(() => {
@@ -81,11 +82,14 @@ export const actions = {
         commit('reset$Record')
         commit('setAddMode')
     },
+
     save ({dispatch, commit, state, getters}, item) {
-            return dispatch('update', item)
+            return dispatch('update', {data:item, id:item.reservation_ps_id})
                 .then(r => {
                     commit('setViewMode', {item, active:true})
+
                 })
+
     },
     insert ({dispatch, commit}, {data}) {
         const url = `/clients`
