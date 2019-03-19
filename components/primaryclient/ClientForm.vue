@@ -75,7 +75,7 @@
         <h2>{{ $vuetify.t('Clients') }} 1  <em><small>{{ $vuetify.t('of') }} 3</small></em></h2>
         <v-spacer/>
         <v-btn
-          :disabled="isAddMode"
+          :disabled="isEditMode"
           color="info"
           @click="edit(item)">{{ $vuetify.t('Edit') }}</v-btn>
         <v-btn
@@ -83,7 +83,6 @@
           color="info"
           @click="save(item)">{{ $vuetify.t('Save') }}</v-btn>
       </v-card-title>
-
       <v-layout v-if="isViewMode">
         <v-container>
 

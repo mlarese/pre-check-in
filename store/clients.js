@@ -57,20 +57,15 @@ export const mutations = {
     setFormValid (s, p) { s.form.valid = p },
     setFormDirty (s, p) { s.form.dirty = p },
     setEditMode (s) { s.mode = 'edit' },
-    setViewMode (s,{item, active}) { item.isViewMode = active },
+    setViewMode (s,{item, active}) {
+        Vue.set(item, 'isViewMode', active)},
     setAddMode (state) { state.mode = 'add' }
 
 }
 export const actions = {
     update ({dispatch, commit, state}, {data, id}) {
-        console.log(id)
         const url = `/clients/${id}`
         return dispatch('api/put', {url, data}, root)
-            .then(() => {
-                const index = state.list.findIndex(o => o.code === id)
-                commit('updateItemList', {data, index})
-                commit('setAddMode')
-            })
     },
     edit({commit}, item) {
         commit('set$Record', item)
