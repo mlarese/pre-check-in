@@ -518,16 +518,6 @@
       <v-divider
         color="black"/>
     </v-card>
-
-    <v-card-actions>
-      <v-spacer/>
-      <v-btn
-        href="/completecheckin"
-        color="warning"
-        dark>
-        {{ $vuetify.t('Send Your Data') }}</v-btn>
-    </v-card-actions>
-
   </div>
 </template>
 
