@@ -75,7 +75,7 @@
         <h2>{{ $vuetify.t('Clients') }} 1  <em><small>{{ $vuetify.t('of') }} 3</small></em></h2>
         <v-spacer/>
         <v-btn
-          :disabled="isAddMode"
+          :disabled="!isViewMode"
           color="info"
           @click="edit(item)">{{ $vuetify.t('Edit') }}</v-btn>
         <v-btn
