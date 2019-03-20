@@ -75,7 +75,7 @@
         <h2>{{ $vuetify.t('Clients') }} 1  <em><small>{{ $vuetify.t('of') }} 3</small></em></h2>
         <v-spacer/>
         <v-btn
-          :disabled="!isViewMode"
+          :disabled="!item.isViewMode"
           color="info"
           @click="edit(item)">{{ $vuetify.t('Edit') }}</v-btn>
         <v-btn
@@ -83,7 +83,7 @@
           color="info"
           @click="save(item)">{{ $vuetify.t('Save') }}</v-btn>
       </v-card-title>
-      <v-layout v-if="isViewMode">
+      <v-layout v-if="item.isViewMode">
         <v-container>
 
           <v-layout
@@ -258,6 +258,7 @@
 
       </v-container></v-layout>
       <v-layout
+        v-else
         row
         wrap
       >
@@ -541,7 +542,7 @@
             isPrimaryGuest () {
                 return this.item.reservation_ps_guest_type === 16 || this.item.reservation_ps_guest_type === 17 || this.item.reservation_ps_guest_type === 18},
             ...mapState('clients', ['list', 'select','filterActive']),
-            ...mapGetters('clients', ['isAddMode', 'isViewMode'])
+            ...mapGetters('clients', ['isViewMode'])
 
         },
         methods: {
