@@ -9,8 +9,11 @@
     <v-card-actions>
       <v-spacer/>
       <v-btn
+        href="/completecheckin"
         color="warning"
-        dark>
+        dark
+        large>
+
         {{ $vuetify.t('Send Your Data') }}</v-btn>
     </v-card-actions>
   </div>

@@ -5,6 +5,7 @@
       justify-center
       align-center
     >
+
       <v-card class="elevation-0">
         <v-card-title class="headline">{{ $vuetify.t('Gentile') }} {{ item.user }} </v-card-title>
         <v-card-text>

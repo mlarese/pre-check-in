@@ -69,7 +69,7 @@ export const actions = {
     },
     edit({commit}, item) {
         commit('set$Record', item)
-        commit('setEditMode')
+        commit('setViewMode', {item, active:false})
 
 
     },
