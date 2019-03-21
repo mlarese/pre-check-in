@@ -3,7 +3,7 @@
     <pre-check-in
       v-for="(lists, i) in list"
       :item="lists"
-      :key="i"
+      :key="`A-${i}`"
     />
     <client-form
       v-for="(guest, i) in list"
