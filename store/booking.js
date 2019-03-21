@@ -21,8 +21,6 @@ export const mutations = {
     setPagination (state, payload) { state.pagination = payload },
     setList (state, payload) {
         state.list = payload
-        state.useCache = true
-        state.grid = {pagination: {}}
     },
     setRecord (state, payload) {
         state.record = _cloneDeep(payload)

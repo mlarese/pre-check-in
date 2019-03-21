@@ -67,8 +67,7 @@
         name: "PreChechIn",
         components: {},
         props: {
-            item: {type: Object, default: () => {}},
-            index: {type: Number, default: 0}
+            item: {type: Object, default: () => {}}
         }
     }
 </script>
