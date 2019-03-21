@@ -4,6 +4,7 @@
       v-for="(lists, i) in list"
       :item="lists"
       :key="`A-${i}`"
+      :index="i"
     />
     <client-form
       v-for="(guest, i) in list"
