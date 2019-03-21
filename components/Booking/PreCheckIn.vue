@@ -40,19 +40,19 @@
           <v-card-title primary-title>
             <div class="my-4 mx-4">
               <div class="headline my-4">{{ $vuetify.t('Your Reservation') }}</div>
-              <span> {{ $vuetify.t('Client') }}: <strong>{{ user }}</strong></span>
+              <span> {{ $vuetify.t('Client') }}: <strong>{{ item.user }}</strong></span>
               <br>
-              <span > {{ $vuetify.t('Nr. Prenotation') }}: <strong>{{ no_prenotation }}</strong></span>
+              <span > {{ $vuetify.t('Nr. Prenotation') }}: <strong>{{ item.no_prenotation }}</strong></span>
               <br class="mx-2">
-              <span> {{ $vuetify.t('Arrival Date') }}: <strong>{{ reservation_ps_arrive_date }}</strong></span>
+              <span> {{ $vuetify.t('Arrival Date') }}: <strong>{{ item.reservation_ps_arrive_date }}</strong></span>
               <br>
-              <span> {{ $vuetify.t('Departure Date') }}: <strong>{{ reservation_ps_leave_date }}</strong></span>
+              <span> {{ $vuetify.t('Departure Date') }}: <strong>{{ item.reservation_ps_leave_date }}</strong></span>
               <br>
-              <span> {{ $vuetify.t('Nr. Visitor') }}: <strong>{{ no_client }}</strong></span>
+              <span> {{ $vuetify.t('Nr. Visitor') }}: <strong>{{ item.no_client }}</strong></span>
               <br>
-              <span> {{ $vuetify.t('Nr. Room') }}: <strong>{{ reservation_ps_room_n }}</strong></span>
+              <span> {{ $vuetify.t('Nr. Room') }}: <strong>{{ item.reservation_ps_room_n }}</strong></span>
               <br>
-              <span> {{ $vuetify.t('Total Amount') }}: <strong>{{ total_amount }}</strong></span>
+              <span> {{ $vuetify.t('Total Amount') }}: <strong>{{ item.total_amount }}</strong></span>
             </div>
           </v-card-title>
         </v-card>
