@@ -34,7 +34,10 @@
     export default {
         components: {ClientForm, CameraToolBar, PreCheckIn},
         computed: {
-            ...mapState('clients', ['list']),
+            ...mapState('clients', ['list'])
+
+        },
+        computed: {
             ...mapState('booking', ['list'])
 
         },
