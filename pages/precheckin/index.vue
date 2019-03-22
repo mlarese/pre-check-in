@@ -1,13 +1,10 @@
 <template>
   <div>
     <pre-check-in
-      v-for="(lists, i) in list"
-      :item="lists"
-      :key="`A-${i}`"
-      :index="i"
+      :item="bookingList[0]"
     />
     <client-form
-      v-for="(guest, i) in list"
+      v-for="(guest, i) in clienstList"
       :item="guest"
       :index="i"
       :key="i"
@@ -34,12 +31,12 @@
     export default {
         components: {ClientForm, CameraToolBar, PreCheckIn},
         computed: {
-            ...mapState('clients', ['list'])
-
-        },
-        computed: {
-            ...mapState('booking', ['list'])
-
+            ...mapState('clients', {
+              'clienstList': 'list'
+            }),
+            ...mapState('booking', {
+              'bookingList': 'list'
+            })
         },
             fetch({store}) {
             store.dispatch('clients/load', {}, root)
