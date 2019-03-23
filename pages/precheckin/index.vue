@@ -4,7 +4,7 @@
       :item="bookingList[0]"
     />
     <client-form
-      v-for="(guest, i) in clienstList"
+      v-for="(guest, i) in clientsList"
       :item="guest"
       :index="i"
       :key="i"
@@ -32,7 +32,7 @@
         components: {ClientForm, CameraToolBar, PreCheckIn},
         computed: {
             ...mapState('clients', {
-              'clienstList': 'list'
+              'clientsList': 'list'
             }),
             ...mapState('booking', {
               'bookingList': 'list'
