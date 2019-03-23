@@ -38,9 +38,12 @@
               'bookingList': 'list'
             })
         },
-            fetch({store}) {
-            store.dispatch('clients/load', {}, root)
+        async fetch({store}) {
+          const all = [
+            store.dispatch('clients/load', {}, root),
             store.dispatch('booking/load', {}, root)
+          ]
+          return await Promise.all(all)
         }
     }
 </script>

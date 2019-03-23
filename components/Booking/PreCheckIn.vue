@@ -64,11 +64,12 @@
 
 <script>
     export default {
-        name: "PreChechIn",
-        components: {},
         props: {
             item: {type: Object, default: () => {}},
             index: {type: Number, default: 0}
+        },
+        created () {
+          console.dir(this)
         }
     }
 </script>
