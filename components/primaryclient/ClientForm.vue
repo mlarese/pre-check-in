@@ -380,26 +380,27 @@
           </v-flex>
 
 
+          <template v-if="!isPrimaryGuest">
 
 
+            <v-flex
+              xs12
+              sm3>
+              <h3 >{{ $vuetify.t('City Of Resident') }}</h3>
+              <v-layout mx-1>
+                <v-combobox
+                  v-model="item.reservation_ps_state"
+                  label="Select"
+                  box
+                  hide-details
+                />
+              </v-layout>
 
-          <v-flex
-            xs12
-            sm3>
-            <h3 >{{ $vuetify.t('City Of Resident') }}</h3>
-            <v-layout mx-1>
-              <v-combobox
-                v-model="item.reservation_ps_state"
-                label="Select"
-                box
-                hide-details
-              />
-            </v-layout>
-
-          </v-flex>
+            </v-flex>
+          </template>
         </v-layout>
         <v-layout
-          v-if="isPrimaryGuest"
+          v-if="!isPrimaryGuest"
           row
           my-5>
           <v-flex
@@ -455,6 +456,7 @@
 
           </v-flex>
         </v-layout>
+
       </template>
       <v-divider
         color="black"/>
