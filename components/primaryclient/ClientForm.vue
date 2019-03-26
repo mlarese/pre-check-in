@@ -196,14 +196,10 @@
           </v-layout>
 
       </v-container></v-layout>
-      <template v-else>
+      <template v-else >
         <v-layout
           row
-          wrap
-
-
-        >
-
+          wrap>
           <v-flex
             xs12
             sm3>
