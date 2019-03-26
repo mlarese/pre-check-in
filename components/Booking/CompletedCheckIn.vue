@@ -62,6 +62,7 @@
     <span>
       <v-btn
         color="info"
+        href="/"
         large>{{ $vuetify.t('Visit Our WebSite') }}</v-btn>
 
     </span>

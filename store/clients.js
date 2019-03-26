@@ -20,7 +20,12 @@ export const state = () => {
             {value: 18, name:'CAPOGRUPPO'},
             {value: 19, name:'FAMILIARE'},
             {value: 20, name:'MEMBRO GRUPPO'}
-        ]
+        ],
+        sex: [
+            {name:'Male'},
+            {name:'Female'}
+        ],
+
     }
 }
 

@@ -216,7 +216,6 @@
           </v-flex>
           <v-spacer/>
           <v-flex
-            v-if="isPrimaryGuest"
             xs12
             sm3
           >
@@ -232,7 +231,6 @@
           </v-flex>
 
           <v-flex
-            v-if="isPrimaryGuest"
             xs12
             sm3>
             <h3 >{{ $vuetify.t('Surname') }}</h3>
@@ -247,14 +245,14 @@
           </v-flex>
 
           <v-flex
-            v-if="isPrimaryGuest"
             xs12
             sm3>
             <h3 >{{ $vuetify.t('Sex') }}</h3>
             <v-layout mx-1>
-              <v-combobox
+              <v-select
                 v-model="item.reservation_ps_gender"
-                label="Select"
+                :items="sex"
+                item-text="name"
                 box
                 hide-details
               />
@@ -263,7 +261,6 @@
           </v-flex>
         </v-layout>
         <v-layout
-          v-if="isPrimaryGuest"
           row
           my-5
         ><v-flex
@@ -309,9 +306,10 @@
             sm3>
             <h3 >{{ $vuetify.t('Place of Birth') }}</h3>
             <v-layout mx-1>
-              <v-combobox
+              <v-select
                 v-model="item.reservation_ps_birthplace"
-                label="Select"
+                :items="country"
+                item-text="name"
                 hide-details
                 box
               />
@@ -325,9 +323,10 @@
             sm3>
             <h3 >{{ $vuetify.t('Country of Birth') }}</h3>
             <v-layout mx-1>
-              <v-combobox
-                v-model="item.reservation_ps_birthplace"
-                label="Select"
+              <v-select
+                v-model="item.reservation_ps_birthcounty"
+                :items="country"
+                item-text="name"
                 box
                 hide-details
               />
@@ -336,7 +335,6 @@
           </v-flex>
         </v-layout>
         <v-layout
-          v-if="isPrimaryGuest"
           row
           my-0>
           <v-flex
@@ -365,9 +363,10 @@
             sm3>
             <h3 >{{ $vuetify.t('Resident Country') }}</h3>
             <v-layout mx-1>
-              <v-combobox
+              <v-select
                 v-model="item.reservation_ps_country"
-                label="Select"
+                :items="country"
+                item-text="name"
                 box
                 hide-details
               />
@@ -376,7 +375,7 @@
           </v-flex>
 
 
-          <template v-if="!isPrimaryGuest">
+          <template v-if="isPrimaryGuest">
 
 
             <v-flex
@@ -396,7 +395,7 @@
           </template>
         </v-layout>
         <v-layout
-          v-if="!isPrimaryGuest"
+          v-if="isPrimaryGuest"
           row
           my-5>
           <v-flex
@@ -411,10 +410,11 @@
             sm3>
             <h3 >{{ $vuetify.t('Type of Document') }}</h3>
             <v-layout mx-1>
-              <v-combobox
+              <v-select
                 v-model="item.reservation_ps_document_type"
-                label="Select"
-                dense
+                :items="documentType"
+                item-value="value"
+                item-text="name"
                 box
                 hide-details
               />
@@ -443,7 +443,9 @@
             <h3 >{{ $vuetify.t('Place Of Release') }}</h3>
             <v-layout mx-1>
               <v-autocomplete
-                v-model="item.reservation_ps_birthcounty"
+                v-model="item.reservation_ps_document_from"
+                :items="coun"
+                item-text="name"
                 box
                 dense
                 hide-details
@@ -481,13 +483,18 @@
         computed: {
             isPrimaryGuest () {
                 return this.item.reservation_ps_guest_type === 16 || this.item.reservation_ps_guest_type === 17 || this.item.reservation_ps_guest_type === 18},
-            ...mapState('clients', ['list', 'select','filterActive']),
+            ...mapState('clients', ['list', 'select','filterActive', 'sex']),
+            ...mapState('documentType', ['documentType']),
+            ...mapState('country', ['country']),
             ...mapGetters('clients', ['isViewMode'])
 
         },
         methods: {
             ...mapActions('clients', ['cancel', 'save', 'edit'])
         },
+        fetch({store}) {
+            store.dispatch('documentType/load', {}, root)
+        }
 
 
 
