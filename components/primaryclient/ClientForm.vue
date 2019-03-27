@@ -189,7 +189,7 @@
               sm3>
               <strong >{{ $vuetify.t('Place Of Release') }}</strong>
               <v-layout mx-2>
-                <span >{{ item.place_of_release_document }}</span>
+                <span >{{ item.reservation_ps_document_from }}</span>
               </v-layout>
 
             </v-flex>
@@ -310,6 +310,7 @@
                 v-model="item.reservation_ps_birthplace"
                 :items="country"
                 item-text="name"
+                item-value="name"
                 hide-details
                 box
               />
@@ -327,6 +328,7 @@
                 v-model="item.reservation_ps_birthcounty"
                 :items="country"
                 item-text="name"
+                item-value="name"
                 box
                 hide-details
               />
@@ -367,6 +369,7 @@
                 v-model="item.reservation_ps_country"
                 :items="country"
                 item-text="name"
+                item-value="name"
                 box
                 hide-details
               />
@@ -383,9 +386,11 @@
               sm3>
               <h3 >{{ $vuetify.t('City Of Resident') }}</h3>
               <v-layout mx-1>
-                <v-combobox
+                <v-select
                   v-model="item.reservation_ps_state"
-                  label="Select"
+                  :items="commune"
+                  item-value="name"
+                  item-text="name"
                   box
                   hide-details
                 />
@@ -413,7 +418,7 @@
               <v-select
                 v-model="item.reservation_ps_document_type"
                 :items="documentType"
-                item-value="value"
+                item-value="name"
                 item-text="name"
                 box
                 hide-details
@@ -442,9 +447,10 @@
             sm3>
             <h3 >{{ $vuetify.t('Place Of Release') }}</h3>
             <v-layout mx-1>
-              <v-autocomplete
+              <v-select
                 v-model="item.reservation_ps_document_from"
-                :items="coun"
+                :items="commune"
+                item-value="name"
                 item-text="name"
                 box
                 dense
@@ -486,6 +492,7 @@
             ...mapState('clients', ['list', 'select','filterActive', 'sex']),
             ...mapState('documentType', ['documentType']),
             ...mapState('country', ['country']),
+            ...mapState('commune', ['commune']),
             ...mapGetters('clients', ['isViewMode'])
 
         },
